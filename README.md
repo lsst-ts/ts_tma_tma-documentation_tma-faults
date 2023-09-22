@@ -40,6 +40,7 @@ The list is for main axes, elevation and azimuth. If two number appears in the f
 |Code|Name|Type|Description|Possible Solution|
 |--|--|--|--|--|
 |710|Timeout|Fault|Depends on the command in execution|Depends on the command faulted|
-|755|Reference mark error|Warning|Reference mark calculation error for heads: .Possible a reference mark is missing|Check the tape and clean if necessary|
+|755|Reference mark error|Warning|Reference mark calculation error for heads: failed head names.Possible a reference mark is missing|Check the tape and clean if necessary|
+|756|Not all heads have a valid reference|Warning|When calculating the head reference value, the heads failed head names failed. They will not be used for absolute position calculation|Try homing again. Some positions are badly calculated for azimuth, the calculated position is 360 deg away from the actual position, and can't not be used|
 
 ### Fault tree

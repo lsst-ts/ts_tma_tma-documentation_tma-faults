@@ -183,7 +183,7 @@ BoschPowerSupplyOff -u-> ACW_fault
 
 ```plantuml
 @startuml
-scale 0.3
+
 rectangle "Azimuth Fault State" as Azimuth
 usecase " TMAPXI-AXESPXI communication failure " as communicationFailure
 usecase " SoftMotion Axis Fault " as SoftMotionAxisFault

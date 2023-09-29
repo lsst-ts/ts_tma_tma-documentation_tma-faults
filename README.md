@@ -183,6 +183,7 @@ BoschPowerSupplyOff -u-> ACW_fault
 
 ```plantuml
 @startuml
+scale 0.3
 rectangle "Azimuth Fault State" as Azimuth
 usecase " TMAPXI-AXESPXI communication failure " as communicationFailure
 usecase " SoftMotion Axis Fault " as SoftMotionAxisFault
@@ -227,7 +228,6 @@ AxisFault -u-> Azimuth
 AxisCommunicationNotConnected -u-> Azimuth
 AxisCommunicationTasksNotRunning -u-> Azimuth
 MainAxes_fault -u-> Azimuth
-Encoder_fault -u-> Azimuth
 
 FaultInAxesController -u-> SoftMotionAxisFault
 ExtrapolationTimeExceeded -u-> SoftMotionAxisFault
@@ -694,37 +694,37 @@ MainCabinetOff -u-> MainAxis
 
 ```plantuml
 @startuml
-rectangle "Main Cabinet (AZ-0001)" as MainCabinet(AZ-0001)
+rectangle "Main Cabinet (AZ-0001)" as MainCabinet
 usecase "Cabinet Fan Faulty" as CabinetFanFaulty
 
-CabinetFanFaulty -u-> MainCabinet(AZ-0001)
+CabinetFanFaulty -u-> MainCabinet
 usecase "Cabinet Heater Faulty" as CabinetHeaterFaulty
 
-CabinetHeaterFaulty -u-> MainCabinet(AZ-0001)
+CabinetHeaterFaulty -u-> MainCabinet
 usecase "Cabinet Valve Faulty" as CabinetValveFaulty
 
-CabinetValveFaulty -u-> MainCabinet(AZ-0001)
+CabinetValveFaulty -u-> MainCabinet
 usecase "Internal Temperature Sensor 1 Failed" as InternalTemperatureSensor1Failed
 
-InternalTemperatureSensor1Failed -u-> MainCabinet(AZ-0001)
+InternalTemperatureSensor1Failed -u-> MainCabinet
 usecase "Internal Temperature Sensor 2 Failed" as InternalTemperatureSensor2Failed
 
-InternalTemperatureSensor2Failed -u-> MainCabinet(AZ-0001)
+InternalTemperatureSensor2Failed -u-> MainCabinet
 usecase "Surface Temperature Sensor Failed" as SurfaceTemperatureSensorFailed
 
-SurfaceTemperatureSensorFailed -u-> MainCabinet(AZ-0001)
+SurfaceTemperatureSensorFailed -u-> MainCabinet
 usecase "Backup Temperature Sensor Failed" as BackupTemperatureSensorFailed
 
-BackupTemperatureSensorFailed -u-> MainCabinet(AZ-0001)
+BackupTemperatureSensorFailed -u-> MainCabinet
 usecase "RMC connection error" as RMCconnectionerror
 
-RMCconnectionerror -u-> MainCabinet(AZ-0001)
+RMCconnectionerror -u-> MainCabinet
 usecase "Critical Temperature Drop" as CriticalTemperatureDrop
 
-CriticalTemperatureDrop -u-> MainCabinet(AZ-0001)
+CriticalTemperatureDrop -u-> MainCabinet
 usecase "Critical Temperature Increase" as CriticalTemperatureIncrease
 
-CriticalTemperatureIncrease -u-> MainCabinet(AZ-0001)
+CriticalTemperatureIncrease -u-> MainCabinet
 
 @enduml
 ```

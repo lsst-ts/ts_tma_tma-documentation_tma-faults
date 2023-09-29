@@ -199,6 +199,8 @@ Overspeed -u-> Azimuth
 AxisControlLoopFinishedLate -u-> Azimuth
 PositiveSoftwarelimit -u-> Azimuth
 NegativeSoftwarelimit -u-> Azimuth
+PositiveLimitSwitch -u-> Azimuth
+NegativeLimitSwitch -u-> Azimuth
 NegativeAdjustableSoftwarelimit -u-> Azimuth
 PositiveAdjustableSoftwarelimit -u-> Azimuth
 CriticalAZCWDeviationLimit -u-> Azimuth

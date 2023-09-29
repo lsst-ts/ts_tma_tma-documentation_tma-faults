@@ -103,7 +103,7 @@ This document contains the fault list for each subsystem in the TMA. Additionall
 
 | Code | Name | Type | Description | Possible Solution |
 | ---- | ---- | ---- | ----------- | ----------------- |
-| 100 | TMAPXI-AXESPXI communcication failure | Alarm | The communication between TMAPXI and AXESPXI is down. This was detected by the AXESPXI and the axis is in fault | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
+| 100 | TMAPXI-AXESPXI communication failure | Alarm | The communication between TMAPXI and AXESPXI is down. This was detected by the AXESPXI and the axis is in fault | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
 | 101 | SoftMotion Axis Fault | Alarm | The softmotion axis went to fault | This is usually due to other fault, check other faults from the system Reset alarm |
 | 102 | STO | Alarm | The STO for the axis is active | Check the safety cause and reset it if necessary then Reset alarm |
 | 104 | Overspeed | Alarm | Overspeed Alarm ocurred | Reset alarm |
@@ -223,7 +223,7 @@ This document contains the fault list for each subsystem in the TMA. Additionall
 
 | Code | Name | Type | Description | Possible Solution |
 | ---- | ---- | ---- | ----------- | ----------------- |
-| 400 | TMAPXI-AXESPXI communcication failure | Alarm | The communication between TMAPXI and AXESPXI is down. This was detected by the AXESPXI and the axis is in fault | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
+| 400 | TMAPXI-AXESPXI communication failure | Alarm | The communication between TMAPXI and AXESPXI is down. This was detected by the AXESPXI and the axis is in fault | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
 | 401 | SoftMotion Axis Fault | Alarm | The softmotion axis went to fault | This is usually due to other fault, check other faults from the system Reset alarm |
 | 402 | STO | Alarm | The STO for the axis is active | Check the safety cause and reset it if necessary then Reset alarm |
 | 404 | Overspeed | Alarm | Overspeed Alarm ocurred | Reset alarm |
@@ -239,7 +239,7 @@ This document contains the fault list for each subsystem in the TMA. Additionall
 | 413 | Negative Adjustable Software limit | Alarm | The negative adjustable software limit has been exceeded | Disable the software limit using the settings and Reset alarm |
 | 431 | Negative Softmotion Software limit | Alarm | The negative software limit in the axis softmotion has been exceeded | Disable the software limit using the settings and Reset alarm |
 | 432 | Positive Softmotion Software limit | Alarm | The positive software limit in the axis softmotion has been exceeded | Disable the software limit using the settings and Reset alarm |
-| 433 | Following Error | Alarm | The axis detect and excesive deviation from the command | Reset alarm |
+| 433 | Following Error | Alarm | The axis detect and excessive deviation from the command | Reset alarm |
 | 436 | Axis Fault | Alarm | Axis control algorithm detected a fault. Possible causes are: NoNewData, Too Many Drives in Fault, AXESPXI and TMAPXI comm fault or software error. Check if NoNewData or PXIs comm alarms are active, otherwise this means drives fault | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
 | 460 | Extrapolation Time Exceeded | Alarm | The defined extrapolation time was exceeded. | Check that the CSC sends tracking commands Reset alarm |
 | 480 | Axis Communication Not Connected | Alarm | The status or telemetry task for the axis is NOT connected. | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
@@ -409,7 +409,7 @@ single affecting both.
 | Code | Name | Type | Description | Possible Solution |
 | ---- | ---- | ---- | ----------- | ----------------- |
 | 600 | MaxCurrent | Alarm | The maximum allowed current was exceed. | Reset alarm |
-| 601 | MinVoltage | Alarm | The minimum allowed voltage was lost. | Reset alarm |
+| 601 | MinVoltage | Alarm | The minimum allowed voltage was lost. | Reset alarm, if persists check [here](https://gitlab.tekniker.es/publico/3151-lsst/documentation/maintenancedocuments/mainpowersupply/motordcvoltagedropcauses) |
 | 602 | Main Power Supply Safety | Alarm | A safety issue has occurred in the Main Power Supply module. | Check the safety cause and reset it if necessary then Reset alarm |
 | 611 | Main Cabinet Off | Alarm | A fault ocurred at the Main Cabinet that is going to power off the cabinet. | Reset the alarm from the main temperature cabinet and then Reset alarm |
 
@@ -439,11 +439,11 @@ single affecting both.
 | 815 | Cabinet EL_OS_CBT_5001 Low temperature | Alarm | The temperature of the Cabinet EL_OS_CBT_5001  is too Low | Reset alarm |
 | 816 | Cabinet EL_OS_CBT_5002 High temperature | Alarm | The temperature of the Cabinet EL_OS_CBT_5002  is too high | Reset alarm |
 | 817 | Cabinet EL_OS_CBT_5002 Low temperature | Alarm | The temperature of the Cabinet EL_OS_CBT_5002  is too Low | Reset alarm |
-| 818 | Emergency Stop | Alarm | Emergency Stop perfomed in the OSS | Check the safety cause and reset it if necessary then Reset alarm |
-| 819 | Hard Stop | Alarm | Hard Stop perfomed in the OSS | Check the safety cause and reset it if necessary then Reset alarm |
-| 821 | OSS Modbus fail | Alarm | The Modbus comunication with the OSS is down | Check connection with the OSS Reset alarm, if persistent reboot AUX PXI |
+| 818 | Emergency Stop | Alarm | Emergency Stop performed in the OSS | Check the safety cause and reset it if necessary then Reset alarm |
+| 819 | Hard Stop | Alarm | Hard Stop performed in the OSS | Check the safety cause and reset it if necessary then Reset alarm |
+| 821 | OSS Modbus fail | Alarm | The Modbus communication with the OSS is down | Check connection with the OSS Reset alarm, if persistent reboot AUX PXI |
 | 830 | TemperatureTooHighAzCBT | Alarm | The temperature of the AZ OS CBT 5001 is too high. | Reset alarm |
-| 830 | Soft Stop | Alarm | Soft Stop perfomed in the OSS | Check the safety cause and reset it if necessary then Reset alarm |
+| 830 | Soft Stop | Alarm | Soft Stop performed in the OSS | Check the safety cause and reset it if necessary then Reset alarm |
 | 831 | TemperatureTooHighELCBT1 | Alarm | The temperature of the EL OS CBT 5001 is too high. | Reset alarm |
 | 832 | TemperatureTooHighELCBT2 | Alarm | The temperature of the EL OS CBT 5002 is too high. | Reset alarm |
 

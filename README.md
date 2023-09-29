@@ -19,6 +19,7 @@
     - [Azimuth](#azimuth)
       - [Fault list](#fault-list-1)
       - [Warning list](#warning-list-1)
+      - [Fault tree](#fault-tree-1)
     - [Azimuth Drives Thermal](#azimuth-drives-thermal)
       - [Fault list](#fault-list-2)
       - [Warning list](#warning-list-2)
@@ -159,6 +160,67 @@ BoschPowerSupplyOff -u-> ACW_fault
 | 120 | Active Drives | Warning | At least one drive is not active |
 | 120 | AZCW Deviation Limit | Warning | The maximum allowed deviation between azimuth cable wrap position and azimuth position was overcomed |
 | 150 | Past Time in Tracking Command | Warning | A tracking command was received with a past timestamp demand value. |
+
+#### Fault tree
+
+```plantuml
+@startuml
+rectangle "Azimuth Fault State" as Azimuth
+usecase " TMAPXI-AXESPXI communication failure " as communicationFailure
+usecase " SoftMotion Axis Fault " as SoftMotionAxisFault
+usecase " STO " as STO
+usecase " Overspeed " as Overspeed
+usecase " Axis Control Loop Finished Late " as AxisControlLoopFinishedLate
+usecase " NoNewData " as NoNewData
+usecase " Positive Software limit " as PositiveSoftwarelimit
+usecase " Negative Software limit " as NegativeSoftwarelimit
+usecase " Positive Limit Switch " as PositiveLimitSwitch
+usecase " Negative Limit Switch " as NegativeLimitSwitch
+usecase " Negative Adjustable Software limit " as NegativeAdjustableSoftwarelimit
+usecase " Positive Adjustable Software limit " as PositiveAdjustableSoftwarelimit
+usecase " Critical AZCW Deviation Limit " as CriticalAZCWDeviationLimit
+usecase " Negative Softmotion Software limit " as NegativeSoftmotionSoftwarelimit
+usecase " Positive Softmotion Software limit " as PositiveSoftmotionSoftwarelimit
+usecase " Following Error " as FollowingError
+usecase " Axis Fault " as AxisFault
+usecase " Extrapolation Time Exceeded " as ExtrapolationTimeExceeded
+usecase " Axis Communication Not Connected " as AxisCommunicationNotConnected
+usecase " Axis Communication Tasks Not Running " as AxisCommunicationTasksNotRunning
+usecase " Axis Externally Disabled " as AxisExternallyDisabled
+usecase "Fault in Axes Controller" as FaultInAxesController
+
+rectangle "OSS Fault State" as OSS_fault
+rectangle "ACW Fault State" as ACW_fault
+rectangle "Encoder Fault State" as Encoder_fault
+
+communicationFailure -u-> Azimuth
+SoftMotionAxisFault -u-> Azimuth
+Overspeed -u-> Azimuth
+AxisControlLoopFinishedLate -u-> Azimuth
+PositiveSoftwarelimit -u-> Azimuth
+NegativeSoftwarelimit -u-> Azimuth
+NegativeAdjustableSoftwarelimit -u-> Azimuth
+PositiveAdjustableSoftwarelimit -u-> Azimuth
+CriticalAZCWDeviationLimit -u-> Azimuth
+NegativeSoftmotionSoftwarelimit -u-> Azimuth
+PositiveSoftmotionSoftwarelimit -u-> Azimuth
+FollowingError -u-> Azimuth
+AxisFault -u-> Azimuth
+AxisCommunicationNotConnected -u-> Azimuth
+AxisCommunicationTasksNotRunning -u-> Azimuth
+OSS_fault -u-> Azimuth
+ACW_fault -u-> Azimuth
+Encoder_fault -u-> Azimuth
+
+FaultInAxesController -u-> SoftMotionAxisFault
+ExtrapolationTimeExceeded -u-> SoftMotionAxisFault
+AxisExternallyDisabled -u-> SoftMotionAxisFault
+STO -u-> FaultInAxesController
+STO -u-> AxisExternallyDisabled
+NoNewData -u-> AxisFault
+
+@enduml
+```
 
 ### Azimuth Drives Thermal
 

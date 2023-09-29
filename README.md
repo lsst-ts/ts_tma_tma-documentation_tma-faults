@@ -207,9 +207,7 @@ usecase " Axis Communication Tasks Not Running " as AxisCommunicationTasksNotRun
 usecase " Axis Externally Disabled " as AxisExternallyDisabled
 usecase "Fault in Axes Controller" as FaultInAxesController
 
-rectangle "OSS Fault State" as OSS_fault
-rectangle "ACW Fault State" as ACW_fault
-rectangle "Encoder Fault State" as Encoder_fault
+rectangle "Main Axes Events" as MainAxes_fault
 
 communicationFailure -u-> Azimuth
 SoftMotionAxisFault -u-> Azimuth
@@ -228,8 +226,7 @@ FollowingError -u-> Azimuth
 AxisFault -u-> Azimuth
 AxisCommunicationNotConnected -u-> Azimuth
 AxisCommunicationTasksNotRunning -u-> Azimuth
-OSS_fault -u-> Azimuth
-ACW_fault -u-> Azimuth
+MainAxes_fault -u-> Azimuth
 Encoder_fault -u-> Azimuth
 
 FaultInAxesController -u-> SoftMotionAxisFault

@@ -1,10 +1,10 @@
-# Fault list
+# TMA Faults
 
-| **Requested by:** | **AURA** |
-|-------------------|----------|
-| **Doc. Code**     |       |
-| **Editor:**       | A. Izpizua         |
-| **Approved by:**  | J. Garcia         |
+| **Requested by:** | **AURA**   |
+| ----------------- | ---------- |
+| **Doc. Code**     |            |
+| **Editor:**       | A. Izpizua |
+| **Approved by:**  | J. Garcia  |
 
 ## Index
 

@@ -15,6 +15,7 @@
     - [ACW](#acw)
       - [Fault list](#fault-list)
       - [Warning list](#warning-list)
+      - [Fault tree](#fault-tree)
     - [Azimuth](#azimuth)
       - [Fault list](#fault-list-1)
       - [Warning list](#warning-list-1)
@@ -96,6 +97,30 @@ This document contains the fault list for each subsystem in the TMA. Additionall
 | 306 | Lubrication Level 1 Low | Warning | The motor 1 lubrication level is low |
 | 307 | Lubrication Level 2 Low | Warning | The motor 2 lubrication level is low |
 | 313 | Azimuth Deviation Limit | Warning | The allowed deviation between azimuth position and azimuth cable wrap position was overcomed |
+
+#### Fault tree
+
+```plantuml
+@startuml
+rectangle "ACW Fault State" as ACW_fault
+usecase " Critical Speed Limit " as CriticalSpeedLimit
+usecase " Positive Software Limit " as PositiveSoftwareLimit
+usecase " Negative Software Limit " as NegativeSoftwareLimit
+usecase " Azimuth Cable Wrap Safety " as AzimuthCableWrapSafety
+usecase " Critical Azimuth Deviation Limit " as CriticalAzimuthDeviationLimit
+usecase " Main Cabinet Off " as MainCabinetOff
+usecase " Bosch Power Supply Off " as BoschPowerSupplyOff
+
+CriticalSpeedLimit -u-> ACW_fault
+PositiveSoftwareLimit -u-> ACW_fault
+NegativeSoftwareLimit -u-> ACW_fault
+AzimuthCableWrapSafety -u-> ACW_fault
+CriticalAzimuthDeviationLimit -u-> ACW_fault
+MainCabinetOff -u-> ACW_fault
+BoschPowerSupplyOff -u-> ACW_fault
+
+@enduml
+```
 
 ### Azimuth
 

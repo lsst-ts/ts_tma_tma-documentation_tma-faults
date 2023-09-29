@@ -8,7 +8,7 @@
 
 ## Index
 
-- [Fault list](#fault-list)
+- [TMA Faults](#tma-faults)
   - [Index](#index)
   - [Introduction](#introduction)
   - [Main Axes](#main-axes)

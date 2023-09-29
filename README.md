@@ -208,7 +208,7 @@ usecase " Axis Communication Tasks Not Running " as AxisCommunicationTasksNotRun
 usecase " Axis Externally Disabled " as AxisExternallyDisabled
 usecase "Fault in Axes Controller" as FaultInAxesController
 
-rectangle "Main Axes Events" as MainAxes_fault
+rectangle "[[https://gitlab.tekniker.es/publico/3151-lsst/documentation/tma-faults/-/tree/master?ref_type=heads#main-axis Main Axes Events]]" as MainAxes_fault
 
 communicationFailure -u-> Azimuth
 SoftMotionAxisFault -u-> Azimuth

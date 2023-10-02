@@ -11,88 +11,92 @@
 - [TMA Faults](#tma-faults)
   - [Index](#index)
   - [Introduction](#introduction)
-  - [Subsystems](#subsystems)
+  - [Fault list for each subsystem](#fault-list-for-each-subsystem)
     - [ACW](#acw)
       - [Fault list](#fault-list)
       - [Warning list](#warning-list)
-      - [Fault tree](#fault-tree)
     - [Azimuth](#azimuth)
       - [Fault list](#fault-list-1)
       - [Warning list](#warning-list-1)
-      - [Fault tree](#fault-tree-1)
     - [Azimuth Drives Thermal](#azimuth-drives-thermal)
       - [Fault list](#fault-list-2)
       - [Warning list](#warning-list-2)
-      - [Fault tree](#fault-tree-2)
     - [Balancing](#balancing)
       - [Fault list](#fault-list-3)
       - [Warning list](#warning-list-3)
-      - [Fault tree](#fault-tree-3)
     - [Azimuth Cabinet 0101](#azimuth-cabinet-0101)
       - [Fault list](#fault-list-4)
       - [Warning list](#warning-list-4)
-      - [Fault tree](#fault-tree-4)
     - [CCW](#ccw)
       - [Fault list](#fault-list-5)
       - [Warning list](#warning-list-5)
-      - [Fault tree](#fault-tree-5)
     - [Elevation](#elevation)
       - [Fault list](#fault-list-6)
       - [Warning list](#warning-list-6)
-      - [Fault tree](#fault-tree-6)
     - [Elevation Drives Thermal](#elevation-drives-thermal)
       - [Fault list](#fault-list-7)
       - [Warning list](#warning-list-7)
-      - [Fault tree](#fault-tree-7)
     - [Encoder System](#encoder-system)
       - [Fault list](#fault-list-8)
       - [Warning list](#warning-list-8)
-      - [Fault tree](#fault-tree-8)
     - [Locking Pin](#locking-pin)
       - [Fault list](#fault-list-9)
       - [Warning list](#warning-list-9)
-      - [Fault tree](#fault-tree-9)
     - [Main Axis](#main-axis)
       - [Fault list](#fault-list-10)
       - [Warning list](#warning-list-10)
-      - [Fault tree](#fault-tree-10)
     - [Main Cabinet (AZ-0001)](#main-cabinet-az-0001)
       - [Fault list](#fault-list-11)
       - [Warning list](#warning-list-11)
-      - [Fault tree](#fault-tree-11)
     - [Mirror Covers](#mirror-covers)
       - [Fault list](#fault-list-12)
       - [Warning list](#warning-list-12)
-      - [Fault tree](#fault-tree-12)
     - [Mirror Cover Locks](#mirror-cover-locks)
       - [Fault list](#fault-list-13)
       - [Warning list](#warning-list-13)
-      - [Fault tree](#fault-tree-13)
     - [Main Power Supply](#main-power-supply)
       - [Fault list](#fault-list-14)
       - [Warning list](#warning-list-14)
-      - [Fault tree](#fault-tree-14)
-    - [OSSEvents](#ossevents)
+    - [OSS](#oss)
       - [Fault list](#fault-list-15)
       - [Warning list](#warning-list-15)
-      - [Fault tree](#fault-tree-15)
     - [Deployable Platforms](#deployable-platforms)
       - [Fault list](#fault-list-16)
       - [Warning list](#warning-list-16)
-      - [Fault tree](#fault-tree-16)
     - [Modbus Auxiliary Boxes (TMA\_AZ\_DZ\_CBT\_0001, TMA\_AZ\_PD\_CBT\_0001, TMA\_AZ\_PD\_TRM\_0001, TMA\_EL\_PD\_CBT\_0001, TMA\_EL\_PD\_CBT\_0002)](#modbus-auxiliary-boxes-tma_az_dz_cbt_0001-tma_az_pd_cbt_0001-tma_az_pd_trm_0001-tma_el_pd_cbt_0001-tma_el_pd_cbt_0002)
       - [Fault list](#fault-list-17)
       - [Warning list](#warning-list-17)
-      - [Fault tree](#fault-tree-17)
     - [TopEndChiller](#topendchiller)
       - [Fault list](#fault-list-18)
-      - [Fault tree](#fault-tree-18)
+  - [Fault tree for each subsystem](#fault-tree-for-each-subsystem)
+    - [Main Axes](#main-axes)
+      - [Azimuth individual fault tree](#azimuth-individual-fault-tree)
+      - [Elevation individual fault tree](#elevation-individual-fault-tree)
+    - [ACW](#acw-1)
+    - [Encoder System](#encoder-system-1)
+    - [Main Power Supply](#main-power-supply-1)
+    - [OSS](#oss-1)
+    - [Azimuth Drives Thermal](#azimuth-drives-thermal-1)
+    - [Balancing](#balancing-1)
+    - [Azimuth Cabinet 0101](#azimuth-cabinet-0101-1)
+    - [CCW](#ccw-1)
+    - [Elevation Drives Thermal](#elevation-drives-thermal-1)
+    - [Locking Pin](#locking-pin-1)
+    - [Main Cabinet (AZ-0001)](#main-cabinet-az-0001-1)
+    - [Mirror Covers](#mirror-covers-1)
+    - [Mirror Cover Locks](#mirror-cover-locks-1)
+    - [Deployable Platforms](#deployable-platforms-1)
+    - [Modbus Auxiliary Boxes (TMA\_AZ\_DZ\_CBT\_0001, TMA\_AZ\_PD\_CBT\_0001, TMA\_AZ\_PD\_TRM\_0001, TMA\_EL\_PD\_CBT\_0001, TMA\_EL\_PD\_CBT\_0002)](#modbus-auxiliary-boxes-tma_az_dz_cbt_0001-tma_az_pd_cbt_0001-tma_az_pd_trm_0001-tma_el_pd_cbt_0001-tma_el_pd_cbt_0002-1)
+    - [Top End Chiller](#top-end-chiller)
 
 ## Introduction
 
-This document contains the fault list for each subsystem in the TMA. Additionally, it also contains a fault tree.
+This document contains the fault and warning list for each subsystem in the TMA. Additionally, it also contains a fault
+tree for each subsystem.
 
-## Subsystems
+## Fault list for each subsystem
+
+This section contains the corresponding fault and warning list for each subsystem.
 
 ### ACW
 
@@ -116,31 +120,6 @@ This document contains the fault list for each subsystem in the TMA. Additionall
 | 306 | Lubrication Level 1 Low | Warning | The motor 1 lubrication level is low |
 | 307 | Lubrication Level 2 Low | Warning | The motor 2 lubrication level is low |
 | 313 | Azimuth Deviation Limit | Warning | The allowed deviation between azimuth position and azimuth cable wrap position was overcomed |
-
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "ACW Fault State" as ACW_fault
-usecase " Critical Speed Limit " as CriticalSpeedLimit
-usecase " Positive Software Limit " as PositiveSoftwareLimit
-usecase " Negative Software Limit " as NegativeSoftwareLimit
-usecase " Azimuth Cable Wrap Safety " as AzimuthCableWrapSafety
-usecase " Critical Azimuth Deviation Limit " as CriticalAzimuthDeviationLimit
-usecase " Main Cabinet Off " as MainCabinetOff
-usecase " Bosch Power Supply Off " as BoschPowerSupplyOff
-
-CriticalSpeedLimit --> ACW_fault
-PositiveSoftwareLimit --> ACW_fault
-NegativeSoftwareLimit --> ACW_fault
-AzimuthCableWrapSafety --> ACW_fault
-CriticalAzimuthDeviationLimit --> ACW_fault
-MainCabinetOff --> ACW_fault
-BoschPowerSupplyOff --> ACW_fault
-
-@enduml
-```
 
 ### Azimuth
 
@@ -205,66 +184,6 @@ Possible descriptions for alarm code `199`:
 | 120 | AZCW Deviation Limit | Warning | The maximum allowed deviation between azimuth cable wrap position and azimuth position was overcomed |
 | 150 | Past Time in Tracking Command | Warning | A tracking command was received with a past timestamp demand value. |
 
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Azimuth Fault State" as Azimuth
-usecase " TMAPXI-AXESPXI communication failure " as communicationFailure
-usecase " SoftMotion Axis Fault " as SoftMotionAxisFault
-usecase " STO " as STO
-usecase " Overspeed " as Overspeed
-usecase " Axis Control Loop Finished Late " as AxisControlLoopFinishedLate
-usecase " NoNewData " as NoNewData
-usecase " Positive Software limit " as PositiveSoftwarelimit
-usecase " Negative Software limit " as NegativeSoftwarelimit
-usecase " Positive Limit Switch " as PositiveLimitSwitch
-usecase " Negative Limit Switch " as NegativeLimitSwitch
-usecase " Negative Adjustable Software limit " as NegativeAdjustableSoftwarelimit
-usecase " Positive Adjustable Software limit " as PositiveAdjustableSoftwarelimit
-usecase " Critical AZCW Deviation Limit " as CriticalAZCWDeviationLimit
-usecase " Negative Softmotion Software limit " as NegativeSoftmotionSoftwarelimit
-usecase " Positive Softmotion Software limit " as PositiveSoftmotionSoftwarelimit
-usecase " Following Error " as FollowingError
-usecase " Axis Fault " as AxisFault
-usecase " Extrapolation Time Exceeded " as ExtrapolationTimeExceeded
-usecase " Axis Communication Not Connected " as AxisCommunicationNotConnected
-usecase " Axis Communication Tasks Not Running " as AxisCommunicationTasksNotRunning
-usecase " Axis Externally Disabled " as AxisExternallyDisabled
-usecase "Fault in Axes Controller" as FaultInAxesController
-
-rectangle "[[https://gitlab.tekniker.es/publico/3151-lsst/documentation/tma-faults/-/tree/master?ref_type=heads#main-axis Main Axes Events]]" as MainAxes_fault
-
-communicationFailure --> Azimuth
-SoftMotionAxisFault --> Azimuth
-Overspeed --> Azimuth
-AxisControlLoopFinishedLate --> Azimuth
-PositiveSoftwarelimit --> Azimuth
-NegativeSoftwarelimit --> Azimuth
-PositiveLimitSwitch --> Azimuth
-NegativeLimitSwitch --> Azimuth
-NegativeAdjustableSoftwarelimit --> Azimuth
-PositiveAdjustableSoftwarelimit --> Azimuth
-CriticalAZCWDeviationLimit --> Azimuth
-NegativeSoftmotionSoftwarelimit --> Azimuth
-PositiveSoftmotionSoftwarelimit --> Azimuth
-FollowingError --> Azimuth
-AxisFault --> Azimuth
-AxisCommunicationNotConnected --> Azimuth
-AxisCommunicationTasksNotRunning --> Azimuth
-MainAxes_fault --> Azimuth
-
-FaultInAxesController --> SoftMotionAxisFault
-ExtrapolationTimeExceeded --> SoftMotionAxisFault
-AxisExternallyDisabled --> SoftMotionAxisFault
-STO --> FaultInAxesController
-STO --> AxisExternallyDisabled
-NoNewData --> AxisFault
-
-@enduml
-```
-
 ### Azimuth Drives Thermal
 
 #### Fault list
@@ -287,30 +206,7 @@ NoNewData --> AxisFault
 | 1606 | 3TemperatureSensorFailure | Warning | Three of the temperature sensors in the group is failing. Check temperature sensors. |
 | 1607 | 4TemperatureSensorFailure | Warning | Three of the temperature sensors in the group is failing. Check temperature sensors. |
 
-#### Fault tree
 
-```plantuml
-@startuml
-left to right direction
-rectangle "Azimuth Drives Thermal" as AzimuthDrivesThermal
-usecase "ValveFaulty" as ValveFaulty
-
-ValveFaulty --> AzimuthDrivesThermal
-usecase "TemperatureTooHigh" as TemperatureTooHigh
-
-TemperatureTooHigh --> AzimuthDrivesThermal
-usecase "ValveMovementTimeout" as ValveMovementTimeout
-
-ValveMovementTimeout --> AzimuthDrivesThermal
-usecase "NotEnoughSensors" as NotEnoughSensors
-
-NotEnoughSensors --> AzimuthDrivesThermal
-usecase "Main Cabinet Off" as MainCabinetOff
-
-MainCabinetOff --> AzimuthDrivesThermal
-
-@enduml
-```
 
 ### Balancing
 
@@ -331,34 +227,6 @@ MainCabinetOff --> AzimuthDrivesThermal
 | ---- | ---- | ---- | ----------- |
 | 1101 | Speed Limit | Warning | The speed limit was violated. |
 
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Balancing" as Balancing
-usecase "Critical Speed Limit" as CriticalSpeedLimit
-
-CriticalSpeedLimit --> Balancing
-usecase "Positive Position Limit" as PositivePositionLimit
-
-PositivePositionLimit --> Balancing
-usecase "Negative Position Limit" as NegativePositionLimit
-
-NegativePositionLimit --> Balancing
-usecase "Balancing System Safety" as BalancingSystemSafety
-
-BalancingSystemSafety --> Balancing
-usecase "Main Cabinet Off" as MainCabinetOff
-
-MainCabinetOff --> Balancing
-usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
-
-BoschPowerSupplyOff --> Balancing
-
-@enduml
-```
-
 ### Azimuth Cabinet 0101
 
 #### Fault list
@@ -377,31 +245,6 @@ BoschPowerSupplyOff --> Balancing
 | ---- | ---- | ---- | ----------- |
 | 1902 | TemperatureTooLow | Warning | The temperature is  too low. |
 | 1904 | 1TemperatureSensorFailure | Warning | One of the temperature sensors in the group is failing. Check temperature sensors. |
-
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Azimuth Cabinet 0101" as AzimuthCabinet0101
-usecase "ValveFaulty" as ValveFaulty
-
-ValveFaulty --> AzimuthCabinet0101
-usecase "TemperatureTooHigh" as TemperatureTooHigh
-
-TemperatureTooHigh --> AzimuthCabinet0101
-usecase "ValveMovementTimeout" as ValveMovementTimeout
-
-ValveMovementTimeout --> AzimuthCabinet0101
-usecase "NotEnoughSensors" as NotEnoughSensors
-
-NotEnoughSensors --> AzimuthCabinet0101
-usecase "Main Cabinet Off" as MainCabinetOff
-
-MainCabinetOff --> AzimuthCabinet0101
-
-@enduml
-```
 
 ### CCW
 
@@ -424,37 +267,6 @@ MainCabinetOff --> AzimuthCabinet0101
 | 1001 | Speed Limit | Warning | The speed limit was violated |
 | 1006 | Lubrication Level 1 Low | Warning | The motor 1 lubrication level is low |
 | 1007 | Lubrication Level 2 Low | Warning | The motor 2 lubrication level is low |
-
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "CCW" as CCW
-usecase "Positive Limit Switch Pressed" as PositiveLimitSwitchPressed
-
-PositiveLimitSwitchPressed -->  CCW
-usecase "Negative Limit Switch Pressed" as NegativeLimitSwitchPressed
-
-NegativeLimitSwitchPressed -->  CCW
-usecase "Critical Speed Limit" as CriticalSpeedLimit
-
-CriticalSpeedLimit -->  CCW
-usecase "Positive Software Limit" as PositiveSoftwareLimit
-
-PositiveSoftwareLimit -->  CCW
-usecase "Negative Software Limit" as NegativeSoftwareLimit
-
-NegativeSoftwareLimit -->  CCW
-usecase "Camera Cable Wrap Safety" as CameraCableWrapSafety
-
-CameraCableWrapSafety -->  CCW
-usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
-
-BoschPowerSupplyOff -->  CCW
-
-@enduml
-```
 
 ### Elevation
 
@@ -518,10 +330,6 @@ Possible descriptions for alarm code `499`:
 | 420 | Active Drives | Warning | At least one drive is not active |
 | 450 | Past Time in Tracking Command | Warning | A tracking command was received with a past timestamp demand value. |
 
-#### Fault tree
-
-This system uses the same tree as Azimuth, see it [**here**](#fault-tree-1)
-
 ### Elevation Drives Thermal
 
 #### Fault list
@@ -542,31 +350,6 @@ This system uses the same tree as Azimuth, see it [**here**](#fault-tree-1)
 | 1704 | 1TemperatureSensorFailure | Warning | One of the temperature sensors in the group is failing. Check temperature sensors. |
 | 1705 | 2TemperatureSensorFailure | Warning | Two of the temperature sensors in the group is failing. Check temperature sensors. |
 | 1706 | 3TemperatureSensorFailure | Warning | Three of the temperature sensors in the group is failing. Check temperature sensors. |
-
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Elevation Drives Thermal" as ElevationDrivesThermal
-usecase "ValveFaulty" as ValveFaulty
-
-ValveFaulty --> ElevationDrivesThermal
-usecase "TemperatureTooHigh" as TemperatureTooHigh
-
-TemperatureTooHigh --> ElevationDrivesThermal
-usecase "ValveMovementTimeout" as ValveMovementTimeout
-
-ValveMovementTimeout --> ElevationDrivesThermal
-usecase "NotEnoughSensors" as NotEnoughSensors
-
-NotEnoughSensors --> ElevationDrivesThermal
-usecase "Main Cabinet Off" as MainCabinetOff
-
-MainCabinetOff --> ElevationDrivesThermal
-
-@enduml
-```
 
 ### Encoder System
 
@@ -594,37 +377,6 @@ MainCabinetOff --> ElevationDrivesThermal
 | 755  | Reference mark error | Warning | Reference mark calculation error for heads: failed head names.Possible a reference mark is missing | Check the tape and clean if necessary |
 | 756  | Not all heads have a valid reference | Warning | When calculating the head reference value, the heads failed head names failed. They will not be used for absolute position calculation | Try homing again. Some positions are badly calculated for azimuth, the calculated position is 360 deg away from the actual position, and can't not be used |
 
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Encoder System" as EncoderSystem
-usecase "Azimuth encoder heads bellow critical value" as Azimuthencoderheadsbellowcriticalvalue
-
-Azimuthencoderheadsbellowcriticalvalue --> EncoderSystem
-usecase "Elevation encoder heads bellow critical value" as Elevationencoderheadsbellowcriticalvalue
-
-Elevationencoderheadsbellowcriticalvalue --> EncoderSystem
-usecase "Frames loss" as Framesloss
-
-Framesloss --> EncoderSystem
-usecase "Received Data not OK" as ReceivedDatanotOK
-
-ReceivedDatanotOK --> EncoderSystem
-usecase "Bad format udp packet" as Badformatudppacket
-
-Badformatudppacket --> EncoderSystem
-usecase "UDP timeout" as UDPtimeout
-
-UDPtimeout --> EncoderSystem
-usecase "Timeout" as Timeout
-
-Timeout --> EncoderSystem
-
-@enduml
-```
-
 ### Locking Pin
 
 #### Fault list
@@ -643,34 +395,6 @@ Timeout --> EncoderSystem
 | Code | Name | Type | Description |
 | ---- | ---- | ---- | ----------- |
 | 1402 | Speed Limit | Warning | The speed limit was violated. |
-
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Locking Pin" as LockingPin
-usecase "Locking Pin Safety" as LockingPinSafety
-
-LockingPinSafety --> LockingPin
-usecase "Critical Speed Limit" as CriticalSpeedLimit
-
-CriticalSpeedLimit --> LockingPin
-usecase "Position Negative Limit" as PositionNegativeLimit
-
-PositionNegativeLimit --> LockingPin
-usecase "Position Positive Limit" as PositionPositiveLimit
-
-PositionPositiveLimit --> LockingPin
-usecase "Main Cabinet Off" as MainCabinetOff
-
-MainCabinetOff --> LockingPin
-usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
-
-BoschPowerSupplyOff --> LockingPin
-
-@enduml
-```
 
 ### Main Axis
 
@@ -695,31 +419,6 @@ single affecting both.
 | 52 | Phase drives status reader | Warning | Phase drives status task has an issue | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
 | 53 | Phase drives telemetry not connected | Warning | Phase drives telemetry connection is down | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
 | 54 | Phase drives telemetry reader | Warning | Phase drives telemetry reader task has an issue | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
-
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Main Axis" as MainAxis
-usecase "Axis CMD Writer" as AxisCMDWriter
-
-AxisCMDWriter --> MainAxis
-usecase "Axis CMDs not connected" as AxisCMDsnotconnected
-
-AxisCMDsnotconnected --> MainAxis
-usecase "OSSAlarm" as OSSAlarm
-
-OSSAlarm --> MainAxis
-usecase "Phase Power Supply Alarm" as PhasePowerSupplyAlarm
-
-PhasePowerSupplyAlarm --> MainAxis
-usecase "Main Cabinet Off" as MainCabinetOff
-
-MainCabinetOff --> MainAxis
-
-@enduml
-```
 
 ### Main Cabinet (AZ-0001)
 
@@ -748,46 +447,6 @@ MainCabinetOff --> MainAxis
 | 1311 | Surface Temperature Increase | Warning | Surface temperature increased beyond limit. |
 | 1314 | Temperature Increase sensor 2 | Warning | Cabinet Temperature increased above limit in sensor 2 |
 
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Main Cabinet (AZ-0001)" as MainCabinet
-usecase "Cabinet Fan Faulty" as CabinetFanFaulty
-
-CabinetFanFaulty --> MainCabinet
-usecase "Cabinet Heater Faulty" as CabinetHeaterFaulty
-
-CabinetHeaterFaulty --> MainCabinet
-usecase "Cabinet Valve Faulty" as CabinetValveFaulty
-
-CabinetValveFaulty --> MainCabinet
-usecase "Internal Temperature Sensor 1 Failed" as InternalTemperatureSensor1Failed
-
-InternalTemperatureSensor1Failed --> MainCabinet
-usecase "Internal Temperature Sensor 2 Failed" as InternalTemperatureSensor2Failed
-
-InternalTemperatureSensor2Failed --> MainCabinet
-usecase "Surface Temperature Sensor Failed" as SurfaceTemperatureSensorFailed
-
-SurfaceTemperatureSensorFailed --> MainCabinet
-usecase "Backup Temperature Sensor Failed" as BackupTemperatureSensorFailed
-
-BackupTemperatureSensorFailed --> MainCabinet
-usecase "RMC connection error" as RMCconnectionerror
-
-RMCconnectionerror --> MainCabinet
-usecase "Critical Temperature Drop" as CriticalTemperatureDrop
-
-CriticalTemperatureDrop --> MainCabinet
-usecase "Critical Temperature Increase" as CriticalTemperatureIncrease
-
-CriticalTemperatureIncrease --> MainCabinet
-
-@enduml
-```
-
 ### Mirror Covers
 
 #### Fault list
@@ -806,31 +465,6 @@ CriticalTemperatureIncrease --> MainCabinet
 | ---- | ---- | ---- | ----------- |
 | 904 | Speed Limit | Warning | This event triggers if the parameter "Motor Max Velocity" is exceeded. |
 
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Mirror Covers" as MirrorCovers
-usecase "Mirror Cover Safety" as MirrorCoverSafety
-
-MirrorCoverSafety --> MirrorCovers
-usecase "Critical Speed Limit" as CriticalSpeedLimit
-
-CriticalSpeedLimit --> MirrorCovers
-usecase "ColisionEvent" as ColisionEvent
-
-ColisionEvent --> MirrorCovers
-usecase "Main Cabinet Off" as MainCabinetOff
-
-MainCabinetOff --> MirrorCovers
-usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
-
-BoschPowerSupplyOff --> MirrorCovers
-
-@enduml
-```
-
 ### Mirror Cover Locks
 
 #### Fault list
@@ -847,28 +481,6 @@ BoschPowerSupplyOff --> MirrorCovers
 | Code | Name | Type | Description |
 | ---- | ---- | ---- | ----------- |
 | 1504 | Speed Limit | Warning | This event triggers if the parameter "Motor Max Velocity" is exceeded. |
-
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Mirror Cover Locks" as MirrorCoverLocks
-usecase "Mirror Cover Safety" as MirrorCoverSafety
-
-MirrorCoverSafety --> MirrorCoverLocks
-usecase "Critical Speed Limit" as CriticalSpeedLimit
-
-CriticalSpeedLimit --> MirrorCoverLocks
-usecase "Main Cabinet Off" as MainCabinetOff
-
-MainCabinetOff --> MirrorCoverLocks
-usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
-
-BoschPowerSupplyOff --> MirrorCoverLocks
-
-@enduml
-```
 
 ### Main Power Supply
 
@@ -888,29 +500,7 @@ BoschPowerSupplyOff --> MirrorCoverLocks
 | 600 | MaxCurrent | Warning | The maximum allowed current was exceed. |
 | 601 | MinVoltage | Warning | The minimum allowed voltage was lost. |
 
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Main Power Supply" as MainPowerSupply
-usecase "MaxCurrent" as MaxCurrent
-
-MaxCurrent --> MainPowerSupply
-usecase "MinVoltage" as MinVoltage
-
-MinVoltage --> MainPowerSupply
-usecase "Main Power Supply Safety" as MainPowerSupplySafety
-
-MainPowerSupplySafety --> MainPowerSupply
-usecase "Main Cabinet Off" as MainCabinetOff
-
-MainCabinetOff --> MainPowerSupply
-
-@enduml
-```
-
-### OSSEvents
+### OSS
 
 #### Fault list
 
@@ -945,76 +535,6 @@ MainCabinetOff --> MainPowerSupply
 | 831 | TemperatureTooLowELCBT2 | Warning | The temperature of the EL OS CBT 5002 is too low. |
 | 831 | TemperatureTooLowELCBT1 | Warning | The temperature of the EL OS CBT 5001 is too low. |
 
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "OSSEvents" as OSSEvents
-usecase "Observation Sequence" as ObservationSequence
-
-ObservationSequence --> OSSEvents
-usecase "Cooling System" as CoolingSystem
-
-CoolingSystem --> OSSEvents
-usecase "Main Pump System" as MainPumpSystem
-
-MainPumpSystem --> OSSEvents
-usecase "Circulation System" as CirculationSystem
-
-CirculationSystem --> OSSEvents
-usecase "Connection Lost" as ConnectionLost
-
-ConnectionLost --> OSSEvents
-usecase "OSS Malfunction" as OSSMalfunction
-
-OSSMalfunction --> OSSEvents
-usecase "Main Cabinet Off" as MainCabinetOff
-
-MainCabinetOff --> OSSEvents
-usecase "Cabinet AZ_OS_CBT_5001 High temperature" as CabinetAZ_OS_CBT_5001Hightemperature
-
-CabinetAZ_OS_CBT_5001Hightemperature --> OSSEvents
-usecase "Cabinet AZ_OS_CBT_5001 Low temperature" as CabinetAZ_OS_CBT_5001Lowtemperature
-
-CabinetAZ_OS_CBT_5001Lowtemperature --> OSSEvents
-usecase "Cabinet EL_OS_CBT_5001 High temperature" as CabinetEL_OS_CBT_5001Hightemperature
-
-CabinetEL_OS_CBT_5001Hightemperature --> OSSEvents
-usecase "Cabinet EL_OS_CBT_5001 Low temperature" as CabinetEL_OS_CBT_5001Lowtemperature
-
-CabinetEL_OS_CBT_5001Lowtemperature --> OSSEvents
-usecase "Cabinet EL_OS_CBT_5002 High temperature" as CabinetEL_OS_CBT_5002Hightemperature
-
-CabinetEL_OS_CBT_5002Hightemperature --> OSSEvents
-usecase "Cabinet EL_OS_CBT_5002 Low temperature" as CabinetEL_OS_CBT_5002Lowtemperature
-
-CabinetEL_OS_CBT_5002Lowtemperature --> OSSEvents
-usecase "Emergency Stop" as EmergencyStop
-
-EmergencyStop --> OSSEvents
-usecase "Hard Stop" as HardStop
-
-HardStop --> OSSEvents
-usecase "OSS Modbus fail" as OSSModbusfail
-
-OSSModbusfail --> OSSEvents
-usecase "TemperatureTooHighAzCBT" as TemperatureTooHighAzCBT
-
-TemperatureTooHighAzCBT --> OSSEvents
-usecase "Soft Stop" as SoftStop
-
-SoftStop --> OSSEvents
-usecase "TemperatureTooHighELCBT1" as TemperatureTooHighELCBT1
-
-TemperatureTooHighELCBT1 --> OSSEvents
-usecase "TemperatureTooHighELCBT2" as TemperatureTooHighELCBT2
-
-TemperatureTooHighELCBT2 --> OSSEvents
-
-@enduml
-```
-
 ### Deployable Platforms
 
 #### Fault list
@@ -1032,28 +552,6 @@ TemperatureTooHighELCBT2 --> OSSEvents
 | ---- | ---- | ---- | ----------- |
 | 1201 | Speed Limit | Warning | This event triggers if the parameter "Platform Max Velocity" is exceeded. |
 
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Deployable Platforms" as DeployablePlatforms
-usecase "Critical Speed Limit" as CriticalSpeedLimit
-
-CriticalSpeedLimit --> DeployablePlatforms
-usecase "Deployable Platform Safety" as DeployablePlatformSafety
-
-DeployablePlatformSafety --> DeployablePlatforms
-usecase "Main Cabinet Off" as MainCabinetOff
-
-MainCabinetOff --> DeployablePlatforms
-usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
-
-BoschPowerSupplyOff --> DeployablePlatforms
-
-@enduml
-```
-
 ### Modbus Auxiliary Boxes (TMA_AZ_DZ_CBT_0001, TMA_AZ_PD_CBT_0001, TMA_AZ_PD_TRM_0001, TMA_EL_PD_CBT_0001, TMA_EL_PD_CBT_0002)
 
 #### Fault list
@@ -1069,25 +567,6 @@ BoschPowerSupplyOff --> DeployablePlatforms
 | Code | Name | Type | Description |
 | ---- | ---- | ---- | ----------- |
 | 2603 | TemperatureTooLow | Warning | The temperature is  too low. |
-
-#### Fault tree
-
-```plantuml
-@startuml
-left to right direction
-rectangle "Modbus Auxiliary Boxes (TMA_AZ_DZ_CBT_0001, TMA_AZ_PD_CBT_0001, TMA_AZ_PD_TRM_0001, TMA_EL_PD_CBT_0001, TMA_EL_PD_CBT_0002)" as ModbusAuxiliaryBoxes
-usecase "CabinetControllerNotOK" as CabinetControllerNotOK
-
-CabinetControllerNotOK --> ModbusAuxiliaryBoxes
-usecase "ConnectionNotOK" as ConnectionNotOK
-
-ConnectionNotOK --> ModbusAuxiliaryBoxes
-usecase "TemperatureTooHigh" as TemperatureTooHigh
-
-TemperatureTooHigh --> ModbusAuxiliaryBoxes
-
-@enduml
-```
 
 ### TopEndChiller
 
@@ -1123,18 +602,625 @@ TemperatureTooHigh --> ModbusAuxiliaryBoxes
 | 2226 | Temperature Alarm Cabinet 3 | Alarm | Alarm temperature for electrical cabinet 3 | Reset alarm |
 | 2227 | Temperature Alarm Cabinet 4 | Alarm | Alarm temperature for electrical cabinet 4 | Reset alarm |
 
-#### Fault tree
+## Fault tree for each subsystem
+
+This section contains the corresponding fault tree for each subsystem.
+
+### Main Axes
+
+This section contains the faults that affect both Azimuth and Elevation.
 
 ```plantuml
 @startuml
 left to right direction
-rectangle "TopEndChiller" as TopEndChiller
-usecase "0201 3 Way valve Failure" as 02013WayvalveFailure
+rectangle "Azimuth Fault State" as Azimuth
+rectangle "Elevation Fault State" as Elevation
+rectangle "OSSAlarm" as OSSAlarm
+rectangle "Phase Power Supply Alarm" as PhasePowerSupplyAlarm
+rectangle "Main Cabinet Off" as MainCabinetOff
+rectangle " Encoder Fault State " as EIB_Fault
+usecase " STO " as STO
+usecase " NoNewData " as NoNewData
+usecase " Axis Fault " as AxisFault
+usecase " Axis Externally Disabled " as AxisExternallyDisabled
+usecase "Fault in Axes Controller" as FaultInAxesController
+rectangle "Common Faults" as MainAxis
+usecase "Axis CMD Writer" as AxisCMDWriter
+usecase "Axis CMDs not connected" as AxisCMDsnotConnected
+usecase "Any of the\nOSS faults" as OSSfaults
+usecase "Any of the\nMain Power Supply faults" as PPSfaults
+usecase "Any of the\nMain Cabinet faults" as cabinetFaults
+usecase "Any of the\nEncoder faults" as encoderFaults
 
-02013WayvalveFailure --> TopEndChiller
-usecase "0202 3 Way valve Failure" as 02023WayvalveFailure
+MainAxis --> Azimuth
+MainAxis --> Elevation
 
-02023WayvalveFailure --> TopEndChiller
+NoNewData --> AxisFault
+AxisFault --> MainAxis
+
+EIB_Fault --> MainAxis
+
+STO --> FaultInAxesController
+STO --> AxisExternallyDisabled
+
+FaultInAxesController --> MainAxis
+AxisExternallyDisabled --> MainAxis
+
+AxisCMDWriter --> MainAxis
+AxisCMDsnotConnected --> MainAxis
+OSSAlarm --> MainAxis
+PhasePowerSupplyAlarm --> MainAxis
+MainCabinetOff --> MainAxis
+
+OSSfaults --> OSSAlarm
+PPSfaults --> PhasePowerSupplyAlarm
+cabinetFaults --> MainCabinetOff
+encoderFaults --> EIB_Fault
+@enduml
+```
+
+#### Azimuth individual fault tree
+
+Here the faults that affect just Azimuth are displayed.
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Azimuth Fault State" as Azimuth
+rectangle "Common Faults" as MainAxis
+rectangle " ACW Fault State " as ACW_Fault
+usecase " SoftMotion Axis Fault " as SoftMotionAxisFault
+usecase " Overspeed " as Overspeed
+usecase " Axis Control Loop Finished Late " as AxisControlLoopFinishedLate
+usecase " Positive Software limit " as PositiveSoftwarelimit
+usecase " Negative Software limit " as NegativeSoftwarelimit
+usecase " Positive Limit Switch " as PositiveLimitSwitch
+usecase " Negative Limit Switch " as NegativeLimitSwitch
+usecase " Negative Adjustable Software limit " as NegativeAdjustableSoftwarelimit
+usecase " Positive Adjustable Software limit " as PositiveAdjustableSoftwarelimit
+usecase " Critical AZCW Deviation Limit " as CriticalAZCWDeviationLimit
+usecase " Negative Softmotion Software limit " as NegativeSoftmotionSoftwarelimit
+usecase " Positive Softmotion Software limit " as PositiveSoftmotionSoftwarelimit
+usecase " Following Error " as FollowingError
+usecase " Extrapolation Time Exceeded " as ExtrapolationTimeExceeded
+usecase " Axis Communication Not Connected " as AxisCommunicationNotConnected
+usecase " Axis Communication Tasks Not Running " as AxisCommunicationTasksNotRunning
+usecase " Software Error in axis management " as AxisManagement
+usecase " TMAPXI-AXESPXI communication failure " as communicationFailure
+usecase "Any of the\nMain Axes common faults" as commonFaults
+usecase "Any of the\nACW faults" as acwFaults
+
+commonFaults --> MainAxis
+MainAxis --> Azimuth
+acwFaults --> ACW_Fault
+ACW_Fault --> Azimuth
+SoftMotionAxisFault --> Azimuth
+Overspeed --> Azimuth
+AxisControlLoopFinishedLate --> Azimuth
+PositiveSoftwarelimit --> Azimuth
+NegativeSoftwarelimit --> Azimuth
+PositiveLimitSwitch --> Azimuth
+NegativeLimitSwitch --> Azimuth
+NegativeAdjustableSoftwarelimit --> Azimuth
+PositiveAdjustableSoftwarelimit --> Azimuth
+CriticalAZCWDeviationLimit --> Azimuth
+NegativeSoftmotionSoftwarelimit --> Azimuth
+PositiveSoftmotionSoftwarelimit --> Azimuth
+FollowingError --> Azimuth
+AxisCommunicationNotConnected --> Azimuth
+AxisCommunicationTasksNotRunning --> Azimuth
+communicationFailure --> Azimuth
+
+AxisManagement --> SoftMotionAxisFault
+ExtrapolationTimeExceeded --> SoftMotionAxisFault
+@enduml
+```
+
+#### Elevation individual fault tree
+
+Here the faults that affect just Elevation are displayed.
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Elevation Fault State" as Elevation
+rectangle "Common Faults" as MainAxis
+usecase " SoftMotion Axis Fault " as SoftMotionAxisFault
+usecase " Overspeed " as Overspeed
+usecase " Axis Control Loop Finished Late " as AxisControlLoopFinishedLate
+usecase " Positive Software limit " as PositiveSoftwarelimit
+usecase " Negative Software limit " as NegativeSoftwarelimit
+usecase " Positive Limit Switch " as PositiveLimitSwitch
+usecase " Negative Limit Switch " as NegativeLimitSwitch
+usecase " Negative Adjustable Software limit " as NegativeAdjustableSoftwarelimit
+usecase " Positive Adjustable Software limit " as PositiveAdjustableSoftwarelimit
+usecase " Negative Softmotion Software limit " as NegativeSoftmotionSoftwarelimit
+usecase " Positive Softmotion Software limit " as PositiveSoftmotionSoftwarelimit
+usecase " Negative Operational Limit Switch " as NegativeOperationalLimit
+usecase " Positive Operational Limit Switch " as PositiveOperationalLimit
+usecase " Following Error " as FollowingError
+usecase " Extrapolation Time Exceeded " as ExtrapolationTimeExceeded
+usecase " Axis Communication Not Connected " as AxisCommunicationNotConnected
+usecase " Axis Communication Tasks Not Running " as AxisCommunicationTasksNotRunning
+usecase " Software Error in axis management " as AxisManagement
+usecase " TMAPXI-AXESPXI communication failure " as communicationFailure
+usecase "Any of the\nMain Axes common faults" as commonFaults
+
+commonFaults --> MainAxis
+communicationFailure --> Elevation
+SoftMotionAxisFault --> Elevation
+Overspeed --> Elevation
+AxisControlLoopFinishedLate --> Elevation
+PositiveSoftwarelimit --> Elevation
+NegativeSoftwarelimit --> Elevation
+PositiveLimitSwitch --> Elevation
+NegativeLimitSwitch --> Elevation
+NegativeAdjustableSoftwarelimit --> Elevation
+PositiveAdjustableSoftwarelimit --> Elevation
+NegativeSoftmotionSoftwarelimit --> Elevation
+PositiveSoftmotionSoftwarelimit --> Elevation
+NegativeOperationalLimit --> Elevation
+PositiveOperationalLimit --> Elevation
+FollowingError --> Elevation
+AxisCommunicationNotConnected --> Elevation
+AxisCommunicationTasksNotRunning --> Elevation
+MainAxis --> Elevation
+
+AxisManagement --> SoftMotionAxisFault
+ExtrapolationTimeExceeded --> SoftMotionAxisFault
+@enduml
+```
+
+### ACW
+
+```plantuml
+@startuml
+left to right direction
+rectangle "ACW Fault State" as ACW_fault
+usecase " Critical Speed Limit " as CriticalSpeedLimit
+usecase " Positive Software Limit " as PositiveSoftwareLimit
+usecase " Negative Software Limit " as NegativeSoftwareLimit
+usecase " Azimuth Cable Wrap Safety " as AzimuthCableWrapSafety
+usecase " Critical Azimuth Deviation Limit " as CriticalAzimuthDeviationLimit
+usecase " Main Cabinet Off " as MainCabinetOff
+usecase " Bosch Power Supply Off " as BoschPowerSupplyOff
+
+CriticalSpeedLimit --> ACW_fault
+PositiveSoftwareLimit --> ACW_fault
+NegativeSoftwareLimit --> ACW_fault
+AzimuthCableWrapSafety --> ACW_fault
+CriticalAzimuthDeviationLimit --> ACW_fault
+MainCabinetOff --> ACW_fault
+BoschPowerSupplyOff --> ACW_fault
+
+@enduml
+```
+
+### Encoder System
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Encoder System" as EncoderSystem
+usecase "Azimuth encoder heads bellow critical value" as AzimuthHeadsBellowCriticalValue
+
+AzimuthHeadsBellowCriticalValue --> EncoderSystem
+usecase "Elevation encoder heads bellow critical value" as ElevationHeadsBellowCriticalValue
+
+ElevationHeadsBellowCriticalValue --> EncoderSystem
+usecase "Frames loss" as FramesLost
+
+FramesLost --> EncoderSystem
+usecase "Received Data not OK" as ReceivedDataNotOK
+
+ReceivedDataNotOK --> EncoderSystem
+usecase "Bad format udp packet" as BadFormatUdpPacket
+
+BadFormatUdpPacket --> EncoderSystem
+usecase "UDP timeout" as UDPtimeout
+
+UDPtimeout --> EncoderSystem
+usecase "Timeout" as Timeout
+
+Timeout --> EncoderSystem
+
+@enduml
+```
+
+### Main Power Supply
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Main Power Supply" as MainPowerSupply
+usecase "MaxCurrent" as MaxCurrent
+
+MaxCurrent --> MainPowerSupply
+usecase "MinVoltage" as MinVoltage
+
+MinVoltage --> MainPowerSupply
+usecase "Main Power Supply Safety" as MainPowerSupplySafety
+
+MainPowerSupplySafety --> MainPowerSupply
+usecase "Main Cabinet Off" as MainCabinetOff
+
+MainCabinetOff --> MainPowerSupply
+
+@enduml
+```
+
+### OSS
+
+```plantuml
+@startuml
+left to right direction
+rectangle "OSS" as OSSEvents
+usecase "Observation Sequence" as ObservationSequence
+
+ObservationSequence --> OSSEvents
+usecase "Cooling System" as CoolingSystem
+
+CoolingSystem --> OSSEvents
+usecase "Main Pump System" as MainPumpSystem
+
+MainPumpSystem --> OSSEvents
+usecase "Circulation System" as CirculationSystem
+
+CirculationSystem --> OSSEvents
+usecase "Connection Lost" as ConnectionLost
+
+ConnectionLost --> OSSEvents
+usecase "OSS Malfunction" as OSSMalfunction
+
+OSSMalfunction --> OSSEvents
+usecase "Main Cabinet Off" as MainCabinetOff
+
+MainCabinetOff --> OSSEvents
+usecase "Cabinet AZ_OS_CBT_5001 High temperature" as CabinetAZ_OS_CBT_5001HighTemperature
+
+CabinetAZ_OS_CBT_5001HighTemperature --> OSSEvents
+usecase "Cabinet AZ_OS_CBT_5001 Low temperature" as CabinetAZ_OS_CBT_5001LowTemperature
+
+CabinetAZ_OS_CBT_5001LowTemperature --> OSSEvents
+usecase "Cabinet EL_OS_CBT_5001 High temperature" as CabinetEL_OS_CBT_5001HighTemperature
+
+CabinetEL_OS_CBT_5001HighTemperature --> OSSEvents
+usecase "Cabinet EL_OS_CBT_5001 Low temperature" as CabinetEL_OS_CBT_5001LowTemperature
+
+CabinetEL_OS_CBT_5001LowTemperature --> OSSEvents
+usecase "Cabinet EL_OS_CBT_5002 High temperature" as CabinetEL_OS_CBT_5002HighTemperature
+
+CabinetEL_OS_CBT_5002HighTemperature --> OSSEvents
+usecase "Cabinet EL_OS_CBT_5002 Low temperature" as CabinetEL_OS_CBT_5002LowTemperature
+
+CabinetEL_OS_CBT_5002LowTemperature --> OSSEvents
+usecase "Emergency Stop" as EmergencyStop
+
+EmergencyStop --> OSSEvents
+usecase "Hard Stop" as HardStop
+
+HardStop --> OSSEvents
+usecase "OSS Modbus fail" as OSSModbusFail
+
+OSSModbusFail --> OSSEvents
+usecase "TemperatureTooHighAzCBT" as TemperatureTooHighAzCBT
+
+TemperatureTooHighAzCBT --> OSSEvents
+usecase "Soft Stop" as SoftStop
+
+SoftStop --> OSSEvents
+usecase "TemperatureTooHighELCBT1" as TemperatureTooHighELCBT1
+
+TemperatureTooHighELCBT1 --> OSSEvents
+usecase "TemperatureTooHighELCBT2" as TemperatureTooHighELCBT2
+
+TemperatureTooHighELCBT2 --> OSSEvents
+
+@enduml
+```
+
+### Azimuth Drives Thermal
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Azimuth Drives Thermal" as AzimuthDrivesThermal
+usecase "ValveFaulty" as ValveFaulty
+
+ValveFaulty --> AzimuthDrivesThermal
+usecase "TemperatureTooHigh" as TemperatureTooHigh
+
+TemperatureTooHigh --> AzimuthDrivesThermal
+usecase "ValveMovementTimeout" as ValveMovementTimeout
+
+ValveMovementTimeout --> AzimuthDrivesThermal
+usecase "NotEnoughSensors" as NotEnoughSensors
+
+NotEnoughSensors --> AzimuthDrivesThermal
+usecase "Main Cabinet Off" as MainCabinetOff
+
+MainCabinetOff --> AzimuthDrivesThermal
+
+@enduml
+```
+
+### Balancing
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Balancing" as Balancing
+usecase "Critical Speed Limit" as CriticalSpeedLimit
+
+CriticalSpeedLimit --> Balancing
+usecase "Positive Position Limit" as PositivePositionLimit
+
+PositivePositionLimit --> Balancing
+usecase "Negative Position Limit" as NegativePositionLimit
+
+NegativePositionLimit --> Balancing
+usecase "Balancing System Safety" as BalancingSystemSafety
+
+BalancingSystemSafety --> Balancing
+usecase "Main Cabinet Off" as MainCabinetOff
+
+MainCabinetOff --> Balancing
+usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
+
+BoschPowerSupplyOff --> Balancing
+
+@enduml
+```
+
+### Azimuth Cabinet 0101
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Azimuth Cabinet 0101" as AzimuthCabinet0101
+usecase "ValveFaulty" as ValveFaulty
+
+ValveFaulty --> AzimuthCabinet0101
+usecase "TemperatureTooHigh" as TemperatureTooHigh
+
+TemperatureTooHigh --> AzimuthCabinet0101
+usecase "ValveMovementTimeout" as ValveMovementTimeout
+
+ValveMovementTimeout --> AzimuthCabinet0101
+usecase "NotEnoughSensors" as NotEnoughSensors
+
+NotEnoughSensors --> AzimuthCabinet0101
+usecase "Main Cabinet Off" as MainCabinetOff
+
+MainCabinetOff --> AzimuthCabinet0101
+
+@enduml
+```
+
+### CCW
+
+```plantuml
+@startuml
+left to right direction
+rectangle "CCW" as CCW
+usecase "Positive Limit Switch Pressed" as PositiveLimitSwitchPressed
+
+PositiveLimitSwitchPressed -->  CCW
+usecase "Negative Limit Switch Pressed" as NegativeLimitSwitchPressed
+
+NegativeLimitSwitchPressed -->  CCW
+usecase "Critical Speed Limit" as CriticalSpeedLimit
+
+CriticalSpeedLimit -->  CCW
+usecase "Positive Software Limit" as PositiveSoftwareLimit
+
+PositiveSoftwareLimit -->  CCW
+usecase "Negative Software Limit" as NegativeSoftwareLimit
+
+NegativeSoftwareLimit -->  CCW
+usecase "Camera Cable Wrap Safety" as CameraCableWrapSafety
+
+CameraCableWrapSafety -->  CCW
+usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
+
+BoschPowerSupplyOff -->  CCW
+
+@enduml
+```
+
+### Elevation Drives Thermal
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Elevation Drives Thermal" as ElevationDrivesThermal
+usecase "ValveFaulty" as ValveFaulty
+
+ValveFaulty --> ElevationDrivesThermal
+usecase "TemperatureTooHigh" as TemperatureTooHigh
+
+TemperatureTooHigh --> ElevationDrivesThermal
+usecase "ValveMovementTimeout" as ValveMovementTimeout
+
+ValveMovementTimeout --> ElevationDrivesThermal
+usecase "NotEnoughSensors" as NotEnoughSensors
+
+NotEnoughSensors --> ElevationDrivesThermal
+usecase "Main Cabinet Off" as MainCabinetOff
+
+MainCabinetOff --> ElevationDrivesThermal
+
+@enduml
+```
+
+### Locking Pin
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Locking Pin" as LockingPin
+usecase "Locking Pin Safety" as LockingPinSafety
+
+LockingPinSafety --> LockingPin
+usecase "Critical Speed Limit" as CriticalSpeedLimit
+
+CriticalSpeedLimit --> LockingPin
+usecase "Position Negative Limit" as PositionNegativeLimit
+
+PositionNegativeLimit --> LockingPin
+usecase "Position Positive Limit" as PositionPositiveLimit
+
+PositionPositiveLimit --> LockingPin
+usecase "Main Cabinet Off" as MainCabinetOff
+
+MainCabinetOff --> LockingPin
+usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
+
+BoschPowerSupplyOff --> LockingPin
+
+@enduml
+```
+
+### Main Cabinet (AZ-0001)
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Main Cabinet (AZ-0001)" as MainCabinet
+usecase "Cabinet Fan Faulty" as CabinetFanFaulty
+
+CabinetFanFaulty --> MainCabinet
+usecase "Cabinet Heater Faulty" as CabinetHeaterFaulty
+
+CabinetHeaterFaulty --> MainCabinet
+usecase "Cabinet Valve Faulty" as CabinetValveFaulty
+
+CabinetValveFaulty --> MainCabinet
+usecase "Internal Temperature Sensor 1 Failed" as InternalTemperatureSensor1Failed
+
+InternalTemperatureSensor1Failed --> MainCabinet
+usecase "Internal Temperature Sensor 2 Failed" as InternalTemperatureSensor2Failed
+
+InternalTemperatureSensor2Failed --> MainCabinet
+usecase "Surface Temperature Sensor Failed" as SurfaceTemperatureSensorFailed
+
+SurfaceTemperatureSensorFailed --> MainCabinet
+usecase "Backup Temperature Sensor Failed" as BackupTemperatureSensorFailed
+
+BackupTemperatureSensorFailed --> MainCabinet
+usecase "RMC connection error" as RMCconnectionError
+
+RMCconnectionError --> MainCabinet
+usecase "Critical Temperature Drop" as CriticalTemperatureDrop
+
+CriticalTemperatureDrop --> MainCabinet
+usecase "Critical Temperature Increase" as CriticalTemperatureIncrease
+
+CriticalTemperatureIncrease --> MainCabinet
+
+@enduml
+```
+
+### Mirror Covers
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Mirror Covers" as MirrorCovers
+usecase "Mirror Cover Safety" as MirrorCoverSafety
+
+MirrorCoverSafety --> MirrorCovers
+usecase "Critical Speed Limit" as CriticalSpeedLimit
+
+CriticalSpeedLimit --> MirrorCovers
+usecase "ColisionEvent" as ColisionEvent
+
+ColisionEvent --> MirrorCovers
+usecase "Main Cabinet Off" as MainCabinetOff
+
+MainCabinetOff --> MirrorCovers
+usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
+
+BoschPowerSupplyOff --> MirrorCovers
+
+@enduml
+```
+
+### Mirror Cover Locks
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Mirror Cover Locks" as MirrorCoverLocks
+usecase "Mirror Cover Safety" as MirrorCoverSafety
+
+MirrorCoverSafety --> MirrorCoverLocks
+usecase "Critical Speed Limit" as CriticalSpeedLimit
+
+CriticalSpeedLimit --> MirrorCoverLocks
+usecase "Main Cabinet Off" as MainCabinetOff
+
+MainCabinetOff --> MirrorCoverLocks
+usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
+
+BoschPowerSupplyOff --> MirrorCoverLocks
+
+@enduml
+```
+
+### Deployable Platforms
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Deployable Platforms" as DeployablePlatforms
+usecase "Critical Speed Limit" as CriticalSpeedLimit
+
+CriticalSpeedLimit --> DeployablePlatforms
+usecase "Deployable Platform Safety" as DeployablePlatformSafety
+
+DeployablePlatformSafety --> DeployablePlatforms
+usecase "Main Cabinet Off" as MainCabinetOff
+
+MainCabinetOff --> DeployablePlatforms
+usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
+
+BoschPowerSupplyOff --> DeployablePlatforms
+
+@enduml
+```
+
+### Modbus Auxiliary Boxes (TMA_AZ_DZ_CBT_0001, TMA_AZ_PD_CBT_0001, TMA_AZ_PD_TRM_0001, TMA_EL_PD_CBT_0001, TMA_EL_PD_CBT_0002)
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Modbus Auxiliary Boxes (TMA_AZ_DZ_CBT_0001, TMA_AZ_PD_CBT_0001, TMA_AZ_PD_TRM_0001, TMA_EL_PD_CBT_0001, TMA_EL_PD_CBT_0002)" as ModbusAuxiliaryBoxes
+usecase "CabinetControllerNotOK" as CabinetControllerNotOK
+
+CabinetControllerNotOK --> ModbusAuxiliaryBoxes
+usecase "ConnectionNotOK" as ConnectionNotOK
+
+ConnectionNotOK --> ModbusAuxiliaryBoxes
+usecase "TemperatureTooHigh" as TemperatureTooHigh
+
+TemperatureTooHigh --> ModbusAuxiliaryBoxes
+
+@enduml
+```
+
+### Top End Chiller
+
+```plantuml
+@startuml
+left to right direction
+rectangle "Top End Chiller" as TopEndChiller
+usecase "0201 3 Way valve Failure" as 02013WayValveFailure
+
+02013WayValveFailure --> TopEndChiller
+usecase "0202 3 Way valve Failure" as 02023WayValveFailure
+
+02023WayValveFailure --> TopEndChiller
 usecase "ActionTimeout" as ActionTimeout
 
 ActionTimeout --> TopEndChiller

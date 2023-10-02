@@ -169,6 +169,7 @@ BoschPowerSupplyOff --> ACW_fault
 | 180 | Axis Communication Not Connected | Alarm | The status or telemetry task for the axis is NOT connected. | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
 | 181 | Axis Communication Tasks Not Running | Alarm | The status or telemetry task for the axis is not running. | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
 | 190 | Axis Externally Disabled | Alarm | The axis was disabled externally without using the enable command. | This is caused by an STO Reset alarm and safety cause |
+| 198 | Software error in CW Tracking loop | Alarm | Cable wrap tracking command not sent. | This is caused by the ACW being in fault, usually another alarm will be present from the ACW |
 | 199 | Internal Alarm in Azimuth OMT | Alarm | The description may vary, as this is a generic code for multiple alarms a subset of the possibilities is listed below | Reset alarm |
 
 Possible additional errors coming with `101`:

@@ -121,6 +121,7 @@ This document contains the fault list for each subsystem in the TMA. Additionall
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "ACW Fault State" as ACW_fault
 usecase " Critical Speed Limit " as CriticalSpeedLimit
 usecase " Positive Software Limit " as PositiveSoftwareLimit
@@ -130,13 +131,13 @@ usecase " Critical Azimuth Deviation Limit " as CriticalAzimuthDeviationLimit
 usecase " Main Cabinet Off " as MainCabinetOff
 usecase " Bosch Power Supply Off " as BoschPowerSupplyOff
 
-CriticalSpeedLimit -u-> ACW_fault
-PositiveSoftwareLimit -u-> ACW_fault
-NegativeSoftwareLimit -u-> ACW_fault
-AzimuthCableWrapSafety -u-> ACW_fault
-CriticalAzimuthDeviationLimit -u-> ACW_fault
-MainCabinetOff -u-> ACW_fault
-BoschPowerSupplyOff -u-> ACW_fault
+CriticalSpeedLimit --> ACW_fault
+PositiveSoftwareLimit --> ACW_fault
+NegativeSoftwareLimit --> ACW_fault
+AzimuthCableWrapSafety --> ACW_fault
+CriticalAzimuthDeviationLimit --> ACW_fault
+MainCabinetOff --> ACW_fault
+BoschPowerSupplyOff --> ACW_fault
 
 @enduml
 ```
@@ -207,7 +208,7 @@ Possible descriptions for alarm code `199`:
 
 ```plantuml
 @startuml
-
+left to right direction
 rectangle "Azimuth Fault State" as Azimuth
 usecase " TMAPXI-AXESPXI communication failure " as communicationFailure
 usecase " SoftMotion Axis Fault " as SoftMotionAxisFault
@@ -234,31 +235,31 @@ usecase "Fault in Axes Controller" as FaultInAxesController
 
 rectangle "[[https://gitlab.tekniker.es/publico/3151-lsst/documentation/tma-faults/-/tree/master?ref_type=heads#main-axis Main Axes Events]]" as MainAxes_fault
 
-communicationFailure -u-> Azimuth
-SoftMotionAxisFault -u-> Azimuth
-Overspeed -u-> Azimuth
-AxisControlLoopFinishedLate -u-> Azimuth
-PositiveSoftwarelimit -u-> Azimuth
-NegativeSoftwarelimit -u-> Azimuth
-PositiveLimitSwitch -u-> Azimuth
-NegativeLimitSwitch -u-> Azimuth
-NegativeAdjustableSoftwarelimit -u-> Azimuth
-PositiveAdjustableSoftwarelimit -u-> Azimuth
-CriticalAZCWDeviationLimit -u-> Azimuth
-NegativeSoftmotionSoftwarelimit -u-> Azimuth
-PositiveSoftmotionSoftwarelimit -u-> Azimuth
-FollowingError -u-> Azimuth
-AxisFault -u-> Azimuth
-AxisCommunicationNotConnected -u-> Azimuth
-AxisCommunicationTasksNotRunning -u-> Azimuth
-MainAxes_fault -u-> Azimuth
+communicationFailure --> Azimuth
+SoftMotionAxisFault --> Azimuth
+Overspeed --> Azimuth
+AxisControlLoopFinishedLate --> Azimuth
+PositiveSoftwarelimit --> Azimuth
+NegativeSoftwarelimit --> Azimuth
+PositiveLimitSwitch --> Azimuth
+NegativeLimitSwitch --> Azimuth
+NegativeAdjustableSoftwarelimit --> Azimuth
+PositiveAdjustableSoftwarelimit --> Azimuth
+CriticalAZCWDeviationLimit --> Azimuth
+NegativeSoftmotionSoftwarelimit --> Azimuth
+PositiveSoftmotionSoftwarelimit --> Azimuth
+FollowingError --> Azimuth
+AxisFault --> Azimuth
+AxisCommunicationNotConnected --> Azimuth
+AxisCommunicationTasksNotRunning --> Azimuth
+MainAxes_fault --> Azimuth
 
-FaultInAxesController -u-> SoftMotionAxisFault
-ExtrapolationTimeExceeded -u-> SoftMotionAxisFault
-AxisExternallyDisabled -u-> SoftMotionAxisFault
-STO -u-> FaultInAxesController
-STO -u-> AxisExternallyDisabled
-NoNewData -u-> AxisFault
+FaultInAxesController --> SoftMotionAxisFault
+ExtrapolationTimeExceeded --> SoftMotionAxisFault
+AxisExternallyDisabled --> SoftMotionAxisFault
+STO --> FaultInAxesController
+STO --> AxisExternallyDisabled
+NoNewData --> AxisFault
 
 @enduml
 ```
@@ -289,22 +290,23 @@ NoNewData -u-> AxisFault
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Azimuth Drives Thermal" as AzimuthDrivesThermal
 usecase "ValveFaulty" as ValveFaulty
 
-ValveFaulty -u-> AzimuthDrivesThermal
+ValveFaulty --> AzimuthDrivesThermal
 usecase "TemperatureTooHigh" as TemperatureTooHigh
 
-TemperatureTooHigh -u-> AzimuthDrivesThermal
+TemperatureTooHigh --> AzimuthDrivesThermal
 usecase "ValveMovementTimeout" as ValveMovementTimeout
 
-ValveMovementTimeout -u-> AzimuthDrivesThermal
+ValveMovementTimeout --> AzimuthDrivesThermal
 usecase "NotEnoughSensors" as NotEnoughSensors
 
-NotEnoughSensors -u-> AzimuthDrivesThermal
+NotEnoughSensors --> AzimuthDrivesThermal
 usecase "Main Cabinet Off" as MainCabinetOff
 
-MainCabinetOff -u-> AzimuthDrivesThermal
+MainCabinetOff --> AzimuthDrivesThermal
 
 @enduml
 ```
@@ -332,25 +334,26 @@ MainCabinetOff -u-> AzimuthDrivesThermal
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Balancing" as Balancing
 usecase "Critical Speed Limit" as CriticalSpeedLimit
 
-CriticalSpeedLimit -u-> Balancing
+CriticalSpeedLimit --> Balancing
 usecase "Positive Position Limit" as PositivePositionLimit
 
-PositivePositionLimit -u-> Balancing
+PositivePositionLimit --> Balancing
 usecase "Negative Position Limit" as NegativePositionLimit
 
-NegativePositionLimit -u-> Balancing
+NegativePositionLimit --> Balancing
 usecase "Balancing System Safety" as BalancingSystemSafety
 
-BalancingSystemSafety -u-> Balancing
+BalancingSystemSafety --> Balancing
 usecase "Main Cabinet Off" as MainCabinetOff
 
-MainCabinetOff -u-> Balancing
+MainCabinetOff --> Balancing
 usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
 
-BoschPowerSupplyOff -u-> Balancing
+BoschPowerSupplyOff --> Balancing
 
 @enduml
 ```
@@ -378,22 +381,23 @@ BoschPowerSupplyOff -u-> Balancing
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Azimuth Cabinet 0101" as AzimuthCabinet0101
 usecase "ValveFaulty" as ValveFaulty
 
-ValveFaulty -u-> AzimuthCabinet0101
+ValveFaulty --> AzimuthCabinet0101
 usecase "TemperatureTooHigh" as TemperatureTooHigh
 
-TemperatureTooHigh -u-> AzimuthCabinet0101
+TemperatureTooHigh --> AzimuthCabinet0101
 usecase "ValveMovementTimeout" as ValveMovementTimeout
 
-ValveMovementTimeout -u-> AzimuthCabinet0101
+ValveMovementTimeout --> AzimuthCabinet0101
 usecase "NotEnoughSensors" as NotEnoughSensors
 
-NotEnoughSensors -u-> AzimuthCabinet0101
+NotEnoughSensors --> AzimuthCabinet0101
 usecase "Main Cabinet Off" as MainCabinetOff
 
-MainCabinetOff -u-> AzimuthCabinet0101
+MainCabinetOff --> AzimuthCabinet0101
 
 @enduml
 ```
@@ -424,28 +428,29 @@ MainCabinetOff -u-> AzimuthCabinet0101
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "CCW" as CCW
 usecase "Positive Limit Switch Pressed" as PositiveLimitSwitchPressed
 
-PositiveLimitSwitchPressed -u->  CCW
+PositiveLimitSwitchPressed -->  CCW
 usecase "Negative Limit Switch Pressed" as NegativeLimitSwitchPressed
 
-NegativeLimitSwitchPressed -u->  CCW
+NegativeLimitSwitchPressed -->  CCW
 usecase "Critical Speed Limit" as CriticalSpeedLimit
 
-CriticalSpeedLimit -u->  CCW
+CriticalSpeedLimit -->  CCW
 usecase "Positive Software Limit" as PositiveSoftwareLimit
 
-PositiveSoftwareLimit -u->  CCW
+PositiveSoftwareLimit -->  CCW
 usecase "Negative Software Limit" as NegativeSoftwareLimit
 
-NegativeSoftwareLimit -u->  CCW
+NegativeSoftwareLimit -->  CCW
 usecase "Camera Cable Wrap Safety" as CameraCableWrapSafety
 
-CameraCableWrapSafety -u->  CCW
+CameraCableWrapSafety -->  CCW
 usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
 
-BoschPowerSupplyOff -u->  CCW
+BoschPowerSupplyOff -->  CCW
 
 @enduml
 ```
@@ -541,22 +546,23 @@ This system uses the same tree as Azimuth, see it [**here**](#fault-tree-1)
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Elevation Drives Thermal" as ElevationDrivesThermal
 usecase "ValveFaulty" as ValveFaulty
 
-ValveFaulty -u-> ElevationDrivesThermal
+ValveFaulty --> ElevationDrivesThermal
 usecase "TemperatureTooHigh" as TemperatureTooHigh
 
-TemperatureTooHigh -u-> ElevationDrivesThermal
+TemperatureTooHigh --> ElevationDrivesThermal
 usecase "ValveMovementTimeout" as ValveMovementTimeout
 
-ValveMovementTimeout -u-> ElevationDrivesThermal
+ValveMovementTimeout --> ElevationDrivesThermal
 usecase "NotEnoughSensors" as NotEnoughSensors
 
-NotEnoughSensors -u-> ElevationDrivesThermal
+NotEnoughSensors --> ElevationDrivesThermal
 usecase "Main Cabinet Off" as MainCabinetOff
 
-MainCabinetOff -u-> ElevationDrivesThermal
+MainCabinetOff --> ElevationDrivesThermal
 
 @enduml
 ```
@@ -591,28 +597,29 @@ MainCabinetOff -u-> ElevationDrivesThermal
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Encoder System" as EncoderSystem
 usecase "Azimuth encoder heads bellow critical value" as Azimuthencoderheadsbellowcriticalvalue
 
-Azimuthencoderheadsbellowcriticalvalue -u-> EncoderSystem
+Azimuthencoderheadsbellowcriticalvalue --> EncoderSystem
 usecase "Elevation encoder heads bellow critical value" as Elevationencoderheadsbellowcriticalvalue
 
-Elevationencoderheadsbellowcriticalvalue -u-> EncoderSystem
+Elevationencoderheadsbellowcriticalvalue --> EncoderSystem
 usecase "Frames loss" as Framesloss
 
-Framesloss -u-> EncoderSystem
+Framesloss --> EncoderSystem
 usecase "Received Data not OK" as ReceivedDatanotOK
 
-ReceivedDatanotOK -u-> EncoderSystem
+ReceivedDatanotOK --> EncoderSystem
 usecase "Bad format udp packet" as Badformatudppacket
 
-Badformatudppacket -u-> EncoderSystem
+Badformatudppacket --> EncoderSystem
 usecase "UDP timeout" as UDPtimeout
 
-UDPtimeout -u-> EncoderSystem
+UDPtimeout --> EncoderSystem
 usecase "Timeout" as Timeout
 
-Timeout -u-> EncoderSystem
+Timeout --> EncoderSystem
 
 @enduml
 ```
@@ -640,25 +647,26 @@ Timeout -u-> EncoderSystem
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Locking Pin" as LockingPin
 usecase "Locking Pin Safety" as LockingPinSafety
 
-LockingPinSafety -u-> LockingPin
+LockingPinSafety --> LockingPin
 usecase "Critical Speed Limit" as CriticalSpeedLimit
 
-CriticalSpeedLimit -u-> LockingPin
+CriticalSpeedLimit --> LockingPin
 usecase "Position Negative Limit" as PositionNegativeLimit
 
-PositionNegativeLimit -u-> LockingPin
+PositionNegativeLimit --> LockingPin
 usecase "Position Positive Limit" as PositionPositiveLimit
 
-PositionPositiveLimit -u-> LockingPin
+PositionPositiveLimit --> LockingPin
 usecase "Main Cabinet Off" as MainCabinetOff
 
-MainCabinetOff -u-> LockingPin
+MainCabinetOff --> LockingPin
 usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
 
-BoschPowerSupplyOff -u-> LockingPin
+BoschPowerSupplyOff --> LockingPin
 
 @enduml
 ```
@@ -691,22 +699,23 @@ single affecting both.
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Main Axis" as MainAxis
 usecase "Axis CMD Writer" as AxisCMDWriter
 
-AxisCMDWriter -u-> MainAxis
+AxisCMDWriter --> MainAxis
 usecase "Axis CMDs not connected" as AxisCMDsnotconnected
 
-AxisCMDsnotconnected -u-> MainAxis
+AxisCMDsnotconnected --> MainAxis
 usecase "OSSAlarm" as OSSAlarm
 
-OSSAlarm -u-> MainAxis
+OSSAlarm --> MainAxis
 usecase "Phase Power Supply Alarm" as PhasePowerSupplyAlarm
 
-PhasePowerSupplyAlarm -u-> MainAxis
+PhasePowerSupplyAlarm --> MainAxis
 usecase "Main Cabinet Off" as MainCabinetOff
 
-MainCabinetOff -u-> MainAxis
+MainCabinetOff --> MainAxis
 
 @enduml
 ```
@@ -742,37 +751,38 @@ MainCabinetOff -u-> MainAxis
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Main Cabinet (AZ-0001)" as MainCabinet
 usecase "Cabinet Fan Faulty" as CabinetFanFaulty
 
-CabinetFanFaulty -u-> MainCabinet
+CabinetFanFaulty --> MainCabinet
 usecase "Cabinet Heater Faulty" as CabinetHeaterFaulty
 
-CabinetHeaterFaulty -u-> MainCabinet
+CabinetHeaterFaulty --> MainCabinet
 usecase "Cabinet Valve Faulty" as CabinetValveFaulty
 
-CabinetValveFaulty -u-> MainCabinet
+CabinetValveFaulty --> MainCabinet
 usecase "Internal Temperature Sensor 1 Failed" as InternalTemperatureSensor1Failed
 
-InternalTemperatureSensor1Failed -u-> MainCabinet
+InternalTemperatureSensor1Failed --> MainCabinet
 usecase "Internal Temperature Sensor 2 Failed" as InternalTemperatureSensor2Failed
 
-InternalTemperatureSensor2Failed -u-> MainCabinet
+InternalTemperatureSensor2Failed --> MainCabinet
 usecase "Surface Temperature Sensor Failed" as SurfaceTemperatureSensorFailed
 
-SurfaceTemperatureSensorFailed -u-> MainCabinet
+SurfaceTemperatureSensorFailed --> MainCabinet
 usecase "Backup Temperature Sensor Failed" as BackupTemperatureSensorFailed
 
-BackupTemperatureSensorFailed -u-> MainCabinet
+BackupTemperatureSensorFailed --> MainCabinet
 usecase "RMC connection error" as RMCconnectionerror
 
-RMCconnectionerror -u-> MainCabinet
+RMCconnectionerror --> MainCabinet
 usecase "Critical Temperature Drop" as CriticalTemperatureDrop
 
-CriticalTemperatureDrop -u-> MainCabinet
+CriticalTemperatureDrop --> MainCabinet
 usecase "Critical Temperature Increase" as CriticalTemperatureIncrease
 
-CriticalTemperatureIncrease -u-> MainCabinet
+CriticalTemperatureIncrease --> MainCabinet
 
 @enduml
 ```
@@ -799,22 +809,23 @@ CriticalTemperatureIncrease -u-> MainCabinet
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Mirror Covers" as MirrorCovers
 usecase "Mirror Cover Safety" as MirrorCoverSafety
 
-MirrorCoverSafety -u-> MirrorCovers
+MirrorCoverSafety --> MirrorCovers
 usecase "Critical Speed Limit" as CriticalSpeedLimit
 
-CriticalSpeedLimit -u-> MirrorCovers
+CriticalSpeedLimit --> MirrorCovers
 usecase "ColisionEvent" as ColisionEvent
 
-ColisionEvent -u-> MirrorCovers
+ColisionEvent --> MirrorCovers
 usecase "Main Cabinet Off" as MainCabinetOff
 
-MainCabinetOff -u-> MirrorCovers
+MainCabinetOff --> MirrorCovers
 usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
 
-BoschPowerSupplyOff -u-> MirrorCovers
+BoschPowerSupplyOff --> MirrorCovers
 
 @enduml
 ```
@@ -840,19 +851,20 @@ BoschPowerSupplyOff -u-> MirrorCovers
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Mirror Cover Locks" as MirrorCoverLocks
 usecase "Mirror Cover Safety" as MirrorCoverSafety
 
-MirrorCoverSafety -u-> MirrorCoverLocks
+MirrorCoverSafety --> MirrorCoverLocks
 usecase "Critical Speed Limit" as CriticalSpeedLimit
 
-CriticalSpeedLimit -u-> MirrorCoverLocks
+CriticalSpeedLimit --> MirrorCoverLocks
 usecase "Main Cabinet Off" as MainCabinetOff
 
-MainCabinetOff -u-> MirrorCoverLocks
+MainCabinetOff --> MirrorCoverLocks
 usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
 
-BoschPowerSupplyOff -u-> MirrorCoverLocks
+BoschPowerSupplyOff --> MirrorCoverLocks
 
 @enduml
 ```
@@ -879,19 +891,20 @@ BoschPowerSupplyOff -u-> MirrorCoverLocks
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Main Power Supply" as MainPowerSupply
 usecase "MaxCurrent" as MaxCurrent
 
-MaxCurrent -u-> MainPowerSupply
+MaxCurrent --> MainPowerSupply
 usecase "MinVoltage" as MinVoltage
 
-MinVoltage -u-> MainPowerSupply
+MinVoltage --> MainPowerSupply
 usecase "Main Power Supply Safety" as MainPowerSupplySafety
 
-MainPowerSupplySafety -u-> MainPowerSupply
+MainPowerSupplySafety --> MainPowerSupply
 usecase "Main Cabinet Off" as MainCabinetOff
 
-MainCabinetOff -u-> MainPowerSupply
+MainCabinetOff --> MainPowerSupply
 
 @enduml
 ```
@@ -935,67 +948,68 @@ MainCabinetOff -u-> MainPowerSupply
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "OSSEvents" as OSSEvents
 usecase "Observation Sequence" as ObservationSequence
 
-ObservationSequence -u-> OSSEvents
+ObservationSequence --> OSSEvents
 usecase "Cooling System" as CoolingSystem
 
-CoolingSystem -u-> OSSEvents
+CoolingSystem --> OSSEvents
 usecase "Main Pump System" as MainPumpSystem
 
-MainPumpSystem -u-> OSSEvents
+MainPumpSystem --> OSSEvents
 usecase "Circulation System" as CirculationSystem
 
-CirculationSystem -u-> OSSEvents
+CirculationSystem --> OSSEvents
 usecase "Connection Lost" as ConnectionLost
 
-ConnectionLost -u-> OSSEvents
+ConnectionLost --> OSSEvents
 usecase "OSS Malfunction" as OSSMalfunction
 
-OSSMalfunction -u-> OSSEvents
+OSSMalfunction --> OSSEvents
 usecase "Main Cabinet Off" as MainCabinetOff
 
-MainCabinetOff -u-> OSSEvents
+MainCabinetOff --> OSSEvents
 usecase "Cabinet AZ_OS_CBT_5001 High temperature" as CabinetAZ_OS_CBT_5001Hightemperature
 
-CabinetAZ_OS_CBT_5001Hightemperature -u-> OSSEvents
+CabinetAZ_OS_CBT_5001Hightemperature --> OSSEvents
 usecase "Cabinet AZ_OS_CBT_5001 Low temperature" as CabinetAZ_OS_CBT_5001Lowtemperature
 
-CabinetAZ_OS_CBT_5001Lowtemperature -u-> OSSEvents
+CabinetAZ_OS_CBT_5001Lowtemperature --> OSSEvents
 usecase "Cabinet EL_OS_CBT_5001 High temperature" as CabinetEL_OS_CBT_5001Hightemperature
 
-CabinetEL_OS_CBT_5001Hightemperature -u-> OSSEvents
+CabinetEL_OS_CBT_5001Hightemperature --> OSSEvents
 usecase "Cabinet EL_OS_CBT_5001 Low temperature" as CabinetEL_OS_CBT_5001Lowtemperature
 
-CabinetEL_OS_CBT_5001Lowtemperature -u-> OSSEvents
+CabinetEL_OS_CBT_5001Lowtemperature --> OSSEvents
 usecase "Cabinet EL_OS_CBT_5002 High temperature" as CabinetEL_OS_CBT_5002Hightemperature
 
-CabinetEL_OS_CBT_5002Hightemperature -u-> OSSEvents
+CabinetEL_OS_CBT_5002Hightemperature --> OSSEvents
 usecase "Cabinet EL_OS_CBT_5002 Low temperature" as CabinetEL_OS_CBT_5002Lowtemperature
 
-CabinetEL_OS_CBT_5002Lowtemperature -u-> OSSEvents
+CabinetEL_OS_CBT_5002Lowtemperature --> OSSEvents
 usecase "Emergency Stop" as EmergencyStop
 
-EmergencyStop -u-> OSSEvents
+EmergencyStop --> OSSEvents
 usecase "Hard Stop" as HardStop
 
-HardStop -u-> OSSEvents
+HardStop --> OSSEvents
 usecase "OSS Modbus fail" as OSSModbusfail
 
-OSSModbusfail -u-> OSSEvents
+OSSModbusfail --> OSSEvents
 usecase "TemperatureTooHighAzCBT" as TemperatureTooHighAzCBT
 
-TemperatureTooHighAzCBT -u-> OSSEvents
+TemperatureTooHighAzCBT --> OSSEvents
 usecase "Soft Stop" as SoftStop
 
-SoftStop -u-> OSSEvents
+SoftStop --> OSSEvents
 usecase "TemperatureTooHighELCBT1" as TemperatureTooHighELCBT1
 
-TemperatureTooHighELCBT1 -u-> OSSEvents
+TemperatureTooHighELCBT1 --> OSSEvents
 usecase "TemperatureTooHighELCBT2" as TemperatureTooHighELCBT2
 
-TemperatureTooHighELCBT2 -u-> OSSEvents
+TemperatureTooHighELCBT2 --> OSSEvents
 
 @enduml
 ```
@@ -1021,19 +1035,20 @@ TemperatureTooHighELCBT2 -u-> OSSEvents
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Deployable Platforms" as DeployablePlatforms
 usecase "Critical Speed Limit" as CriticalSpeedLimit
 
-CriticalSpeedLimit -u-> DeployablePlatforms
+CriticalSpeedLimit --> DeployablePlatforms
 usecase "Deployable Platform Safety" as DeployablePlatformSafety
 
-DeployablePlatformSafety -u-> DeployablePlatforms
+DeployablePlatformSafety --> DeployablePlatforms
 usecase "Main Cabinet Off" as MainCabinetOff
 
-MainCabinetOff -u-> DeployablePlatforms
+MainCabinetOff --> DeployablePlatforms
 usecase "Bosch Power Supply Off" as BoschPowerSupplyOff
 
-BoschPowerSupplyOff -u-> DeployablePlatforms
+BoschPowerSupplyOff --> DeployablePlatforms
 
 @enduml
 ```
@@ -1058,16 +1073,17 @@ BoschPowerSupplyOff -u-> DeployablePlatforms
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "Modbus Auxiliary Boxes (TMA_AZ_DZ_CBT_0001, TMA_AZ_PD_CBT_0001, TMA_AZ_PD_TRM_0001, TMA_EL_PD_CBT_0001, TMA_EL_PD_CBT_0002)" as ModbusAuxiliaryBoxes
 usecase "CabinetControllerNotOK" as CabinetControllerNotOK
 
-CabinetControllerNotOK -u-> ModbusAuxiliaryBoxes
+CabinetControllerNotOK --> ModbusAuxiliaryBoxes
 usecase "ConnectionNotOK" as ConnectionNotOK
 
-ConnectionNotOK -u-> ModbusAuxiliaryBoxes
+ConnectionNotOK --> ModbusAuxiliaryBoxes
 usecase "TemperatureTooHigh" as TemperatureTooHigh
 
-TemperatureTooHigh -u-> ModbusAuxiliaryBoxes
+TemperatureTooHigh --> ModbusAuxiliaryBoxes
 
 @enduml
 ```
@@ -1110,88 +1126,89 @@ TemperatureTooHigh -u-> ModbusAuxiliaryBoxes
 
 ```plantuml
 @startuml
+left to right direction
 rectangle "TopEndChiller" as TopEndChiller
 usecase "0201 3 Way valve Failure" as 02013WayvalveFailure
 
-02013WayvalveFailure -u-> TopEndChiller
+02013WayvalveFailure --> TopEndChiller
 usecase "0202 3 Way valve Failure" as 02023WayvalveFailure
 
-02023WayvalveFailure -u-> TopEndChiller
+02023WayvalveFailure --> TopEndChiller
 usecase "ActionTimeout" as ActionTimeout
 
-ActionTimeout -u-> TopEndChiller
+ActionTimeout --> TopEndChiller
 usecase "Air Compressed Valve Failure" as AirCompressedValveFailure
 
-AirCompressedValveFailure -u-> TopEndChiller
+AirCompressedValveFailure --> TopEndChiller
 usecase "CameraFansFailure" as CameraFansFailure
 
-CameraFansFailure -u-> TopEndChiller
+CameraFansFailure --> TopEndChiller
 usecase "Electrical Cabinet 1 Control Failure" as ElectricalCabinet1ControlFailure
 
-ElectricalCabinet1ControlFailure -u-> TopEndChiller
+ElectricalCabinet1ControlFailure --> TopEndChiller
 usecase "Electrical Cabinet 2 Control Failure" as ElectricalCabinet2ControlFailure
 
-ElectricalCabinet2ControlFailure -u-> TopEndChiller
+ElectricalCabinet2ControlFailure --> TopEndChiller
 usecase "Electrical Cabinet 3 Control Failure" as ElectricalCabinet3ControlFailure
 
-ElectricalCabinet3ControlFailure -u-> TopEndChiller
+ElectricalCabinet3ControlFailure --> TopEndChiller
 usecase "Electrical Cabinet 4 Control Failure" as ElectricalCabinet4ControlFailure
 
-ElectricalCabinet4ControlFailure -u-> TopEndChiller
+ElectricalCabinet4ControlFailure --> TopEndChiller
 usecase "Heat Exchanger 1 Fan Failure" as HeatExchanger1FanFailure
 
-HeatExchanger1FanFailure -u-> TopEndChiller
+HeatExchanger1FanFailure --> TopEndChiller
 usecase "Heat Exchanger 2 Fan Failure" as HeatExchanger2FanFailure
 
-HeatExchanger2FanFailure -u-> TopEndChiller
+HeatExchanger2FanFailure --> TopEndChiller
 usecase "Humidity 0501" as Humidity0501
 
-Humidity0501 -u-> TopEndChiller
+Humidity0501 --> TopEndChiller
 usecase "Humidity 0502" as Humidity0502
 
-Humidity0502 -u-> TopEndChiller
+Humidity0502 --> TopEndChiller
 usecase "Humidity 0504" as Humidity0504
 
-Humidity0504 -u-> TopEndChiller
+Humidity0504 --> TopEndChiller
 usecase "Humidity 0505" as Humidity0505
 
-Humidity0505 -u-> TopEndChiller
+Humidity0505 --> TopEndChiller
 usecase "M2FansFailure" as M2FansFailure
 
-M2FansFailure -u-> TopEndChiller
+M2FansFailure --> TopEndChiller
 usecase "PLC Malfunction" as PLCMalfunction
 
-PLCMalfunction -u-> TopEndChiller
+PLCMalfunction --> TopEndChiller
 usecase "Temperature 0501" as Temperature0501
 
-Temperature0501 -u-> TopEndChiller
+Temperature0501 --> TopEndChiller
 usecase "Temperature 0502" as Temperature0502
 
-Temperature0502 -u-> TopEndChiller
+Temperature0502 --> TopEndChiller
 usecase "Temperature 0504" as Temperature0504
 
-Temperature0504 -u-> TopEndChiller
+Temperature0504 --> TopEndChiller
 usecase "Temperature 0505" as Temperature0505
 
-Temperature0505 -u-> TopEndChiller
+Temperature0505 --> TopEndChiller
 usecase "Temperature 0506" as Temperature0506
 
-Temperature0506 -u-> TopEndChiller
+Temperature0506 --> TopEndChiller
 usecase "Temperature 0507" as Temperature0507
 
-Temperature0507 -u-> TopEndChiller
+Temperature0507 --> TopEndChiller
 usecase "Temperature Alarm Cabinet 1" as TemperatureAlarmCabinet1
 
-TemperatureAlarmCabinet1 -u-> TopEndChiller
+TemperatureAlarmCabinet1 --> TopEndChiller
 usecase "Temperature Alarm Cabinet 2" as TemperatureAlarmCabinet2
 
-TemperatureAlarmCabinet2 -u-> TopEndChiller
+TemperatureAlarmCabinet2 --> TopEndChiller
 usecase "Temperature Alarm Cabinet 3" as TemperatureAlarmCabinet3
 
-TemperatureAlarmCabinet3 -u-> TopEndChiller
+TemperatureAlarmCabinet3 --> TopEndChiller
 usecase "Temperature Alarm Cabinet 4" as TemperatureAlarmCabinet4
 
-TemperatureAlarmCabinet4 -u-> TopEndChiller
+TemperatureAlarmCabinet4 --> TopEndChiller
 
 @enduml
 ```

@@ -168,6 +168,30 @@ BoschPowerSupplyOff -u-> ACW_fault
 | 180 | Axis Communication Not Connected | Alarm | The status or telemetry task for the axis is NOT connected. | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
 | 181 | Axis Communication Tasks Not Running | Alarm | The status or telemetry task for the axis is not running. | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
 | 190 | Axis Externally Disabled | Alarm | The axis was disabled externally without using the enable command. | This is caused by an STO Reset alarm and safety cause |
+| 199 | Internal Alarm in Azimuth OMT | Alarm | The description may vary, as this is a generic code for multiple alarms a subset of the possibilities is listed below | Reset alarm |
+
+Possible additional errors coming with `101`:
+
+| Code  | Name                              | Type  | Description                                            | Possible Solution |
+| ----- | --------------------------------- | ----- | ------------------------------------------------------ | ----------------- |
+| -8108 | Software Error in axis management | Alarm | Tracking algorithm has an invalid output (NaN or  Inf) | Reset alarm       |
+| -8109 | Software Error in axis management | Alarm | Slewing algorithm has an invalid output (NaN or  Inf)  | Reset alarm       |
+| -8110 | Software Error in axis management | Alarm | Slewing profile timing error                           | Reset alarm       |
+
+Possible descriptions for alarm code `199`:
+
+- The request tracking speed is greater than the maximum allowed tracking speed.
+- Tracking command buffer is full. Continuous move command was ignored.
+- Zero speed setpoint received in a speed profile command.
+- Set initial position cannot be performed while the trajectory generator is enabled.
+- Speed setpoint higher than maximum speed.
+- Discrete move already being executed.
+- Command not allowed in current operation mode.
+- Operation cannot be changed while system is enabled.
+- System already enabled.
+- Slewing command detected during slewing move.
+- Trajectory generator is disabled. Command ignored.
+- The continuous command time setpoint is lower than current time.
 
 #### Warning list
 
@@ -454,6 +478,30 @@ BoschPowerSupplyOff -u->  CCW
 | 480 | Axis Communication Not Connected | Alarm | The status or telemetry task for the axis is NOT connected. | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
 | 481 | Axis Communication Tasks Not Running | Alarm | The status or telemetry task for the axis is not running. | Reset alarm, if this doesn't work reboot the AXES PXI and then reset the alarm |
 | 490 | Axis Externally Disabled | Alarm | The axis was disabled externally without using the enable command. |  This is caused by an STO Reset alarm and safety cause |
+| 499 | Internal Alarm in Azimuth OMT | Alarm | The description may vary, as this is a generic code for multiple alarms a subset of the possibilities is listed below | Reset alarm |
+
+Possible additional errors coming with `401`:
+
+| Code  | Name                              | Type  | Description                                            | Possible Solution |
+| ----- | --------------------------------- | ----- | ------------------------------------------------------ | ----------------- |
+| -8108 | Software Error in axis management | Alarm | Tracking algorithm has an invalid output (NaN or  Inf) | Reset alarm       |
+| -8109 | Software Error in axis management | Alarm | Slewing algorithm has an invalid output (NaN or  Inf)  | Reset alarm       |
+| -8110 | Software Error in axis management | Alarm | Slewing profile timing error                           | Reset alarm       |
+
+Possible descriptions for alarm code `499`:
+
+- The request tracking speed is greater than the maximum allowed tracking speed.
+- Tracking command buffer is full. Continuous move command was ignored.
+- Zero speed setpoint received in a speed profile command.
+- Set initial position cannot be performed while the trajectory generator is enabled.
+- Speed setpoint higher than maximum speed.
+- Discrete move already being executed.
+- Command not allowed in current operation mode.
+- Operation cannot be changed while system is enabled.
+- System already enabled.
+- Slewing command detected during slewing move.
+- Trajectory generator is disabled. Command ignored.
+- The continuous command time setpoint is lower than current time.
 
 #### Warning list
 

@@ -206,8 +206,6 @@ Possible descriptions for alarm code `199`:
 | 1606 | 3TemperatureSensorFailure | Warning | Three of the temperature sensors in the group is failing. Check temperature sensors. |
 | 1607 | 4TemperatureSensorFailure | Warning | Three of the temperature sensors in the group is failing. Check temperature sensors. |
 
-
-
 ### Balancing
 
 #### Fault list

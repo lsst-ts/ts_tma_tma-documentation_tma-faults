@@ -131,7 +131,7 @@ This section contains the corresponding fault and warning list for each subsyste
 | 101 | SoftMotion Axis Fault | Alarm | The softmotion axis went to fault | This is usually due to other fault, check other faults from the system Reset alarm |
 | 102 | STO | Alarm | The STO for the axis is active | Check the safety cause and reset it if necessary then Reset alarm |
 | 104 | Overspeed | Alarm | Overspeed Alarm ocurred | Reset alarm |
-| 105 | Axis Control Loop Finished Late | Alarm | The controller axis controller loop takes to much time to execute. The counter increases its value by 1000, when an issue is detected, decreasing by 1 each no problem iteration | Check the temperature in the main cabinet AZ-0001 then reset alarm |
+| 105 | Axis Control Loop Finished Late | Alarm | The controller axis controller loop takes to much time to execute. The counter increases its value by 1000, when an issue is detected, decreasing by 1 each no problem iteration | Check the temperature in the main cabinet AZ-0001, if it is too high it affects the performance of the CPU and makes the ethercat slow, ensure the cabinet is cooled and then reset alarm |
 | 105 | NoNewData | Alarm | New data does not arrive from EIB | Check that the network is OK between the EIB and the AXIS PXI Reset alarm |
 | 110 | Positive Software limit | Alarm | The positive software limit has been exceeded | Disable the software limit using the settings and Reset alarm |
 | 111 | Negative Software limit | Alarm | The negative software limit has been exceeded | Disable the software limit using the settings and Reset alarm |
@@ -276,7 +276,7 @@ Possible descriptions for alarm code `199`:
 | 401 | SoftMotion Axis Fault | Alarm | The softmotion axis went to fault | This is usually due to other fault, check other faults from the system Reset alarm |
 | 402 | STO | Alarm | The STO for the axis is active | Check the safety cause and reset it if necessary then Reset alarm |
 | 404 | Overspeed | Alarm | Overspeed Alarm ocurred | Reset alarm |
-| 405 | Axis Control Loop Finished Late | Alarm | The controller axis controller loop takes to much time to execute. The counter increases its value by 1000, when an issue is detected, decreasing by 1 each no problem iteration | Check the temperature in the main cabinet AZ-0001 then reset alarm |
+| 405 | Axis Control Loop Finished Late | Alarm | The controller axis controller loop takes to much time to execute. The counter increases its value by 1000, when an issue is detected, decreasing by 1 each no problem iteration | Check the temperature in the main cabinet AZ-0001, if it is too high it affects the performance of the CPU and makes the ethercat slow, ensure the cabinet is cooled and then reset alarm |
 | 405 | NoNewData | Alarm | New data does not arrive from EIB | Check that the network is OK between the EIB and the AXIS PXI Reset alarm |
 | 410 | Positive Software limit | Alarm | The positive software limit has been exceeded | Disable the software limit using the settings and Reset alarm |
 | 411 | Negative Software limit | Alarm | The negative software limit has been exceeded | Disable the software limit using the settings and Reset alarm |

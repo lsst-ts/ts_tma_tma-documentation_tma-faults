@@ -524,6 +524,7 @@ single affecting both.
 | 830 | Soft Stop | Alarm | Soft Stop performed in the OSS | Check the safety cause and reset it if necessary then Reset alarm |
 | 831 | TemperatureTooHighELCBT1 | Alarm | The temperature of the EL OS CBT 5001 is too high. | Reset alarm |
 | 832 | TemperatureTooHighELCBT2 | Alarm | The temperature of the EL OS CBT 5002 is too high. | Reset alarm |
+| 860 | Fault with detailed information | Alarm | This alarm is meant to give additional information to other faults. | Reset alarm |
 
 #### Warning list
 

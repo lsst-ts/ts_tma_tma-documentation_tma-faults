@@ -487,7 +487,7 @@ single affecting both.
 | Code | Name | Type | Description | Possible Solution |
 | ---- | ---- | ---- | ----------- | ----------------- |
 | 600 | MaxCurrent | Alarm | The maximum allowed current was exceed. | Reset alarm |
-| 601 | MinVoltage | Alarm | The minimum allowed voltage was lost. | Reset alarm, if persists check [here](https://gitlab.tekniker.es/publico/3151-lsst/documentation/maintenancedocuments/mainpowersupply/motordcvoltagedropcauses) |
+| 601 | MinVoltage | Alarm | The minimum allowed voltage was lost. | Reset alarm, if persists check [here](https://github.com/lsst-ts/ts_tma_tma-documentation_maintenance-documents_main-power-supply_motor-dc-voltagedropcauses) |
 | 602 | Main Power Supply Safety | Alarm | A safety issue has occurred in the Main Power Supply module. | Check the safety cause and reset it if necessary then Reset alarm |
 | 611 | Main Cabinet Off | Alarm | A fault ocurred at the Main Cabinet that is going to power off the cabinet. | Reset the alarm from the main temperature cabinet and then Reset alarm |
 

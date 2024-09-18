@@ -13,24 +13,61 @@
   - [Introduction](#introduction)
   - [Fault list for each subsystem](#fault-list-for-each-subsystem)
     - [ACW](#acw)
+      - [Fault list](#fault-list)
+      - [Warning list](#warning-list)
     - [Azimuth](#azimuth)
+      - [Fault list](#fault-list-1)
+      - [Warning list](#warning-list-1)
     - [Azimuth Drives Thermal](#azimuth-drives-thermal)
+      - [Fault list](#fault-list-2)
+      - [Warning list](#warning-list-2)
     - [Balancing](#balancing)
+      - [Fault list](#fault-list-3)
+      - [Warning list](#warning-list-3)
     - [Azimuth Cabinet 0101](#azimuth-cabinet-0101)
+      - [Fault list](#fault-list-4)
+      - [Warning list](#warning-list-4)
     - [CCW](#ccw)
+      - [Fault list](#fault-list-5)
+      - [Warning list](#warning-list-5)
     - [Elevation](#elevation)
+      - [Fault list](#fault-list-6)
+      - [Warning list](#warning-list-6)
     - [Elevation Drives Thermal](#elevation-drives-thermal)
+      - [Fault list](#fault-list-7)
+      - [Warning list](#warning-list-7)
     - [Encoder System](#encoder-system)
+      - [Fault list](#fault-list-8)
+      - [Warning list](#warning-list-8)
     - [Locking Pin](#locking-pin)
+      - [Fault list](#fault-list-9)
+      - [Warning list](#warning-list-9)
     - [Main Axis](#main-axis)
+      - [Fault list](#fault-list-10)
+      - [Warning list](#warning-list-10)
     - [Main Cabinet (AZ-0001)](#main-cabinet-az-0001)
+      - [Fault list](#fault-list-11)
+      - [Warning list](#warning-list-11)
     - [Mirror Covers](#mirror-covers)
+      - [Fault list](#fault-list-12)
+      - [Warning list](#warning-list-12)
     - [Mirror Cover Locks](#mirror-cover-locks)
+      - [Fault list](#fault-list-13)
+      - [Warning list](#warning-list-13)
     - [Main Power Supply](#main-power-supply)
+      - [Fault list](#fault-list-14)
+      - [Warning list](#warning-list-14)
     - [OSS](#oss)
+      - [Fault list](#fault-list-15)
+      - [Warning list](#warning-list-15)
     - [Deployable Platforms](#deployable-platforms)
+      - [Fault list](#fault-list-16)
+      - [Warning list](#warning-list-16)
     - [Modbus Auxiliary Boxes (TMA\_AZ\_DZ\_CBT\_0001, TMA\_AZ\_PD\_CBT\_0001, TMA\_AZ\_PD\_TRM\_0001, TMA\_EL\_PD\_CBT\_0001, TMA\_EL\_PD\_CBT\_0002)](#modbus-auxiliary-boxes-tma_az_dz_cbt_0001-tma_az_pd_cbt_0001-tma_az_pd_trm_0001-tma_el_pd_cbt_0001-tma_el_pd_cbt_0002)
+      - [Fault list](#fault-list-17)
+      - [Warning list](#warning-list-17)
     - [TopEndChiller](#topendchiller)
+      - [Fault list](#fault-list-18)
   - [Fault tree for each subsystem](#fault-tree-for-each-subsystem)
     - [Main Axes](#main-axes)
       - [Azimuth individual fault tree](#azimuth-individual-fault-tree)
@@ -572,7 +609,7 @@ This section contains the corresponding fault tree for each subsystem.
 
 This section contains the faults that affect both Azimuth and Elevation.
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Azimuth Fault State" as Azimuth
@@ -625,7 +662,7 @@ encoderFaults --> EIB_Fault
 
 Here the faults that affect just Azimuth are displayed.
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Azimuth Fault State" as Azimuth
@@ -682,7 +719,7 @@ ExtrapolationTimeExceeded --> SoftMotionAxisFault
 
 Here the faults that affect just Elevation are displayed.
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Elevation Fault State" as Elevation
@@ -735,7 +772,7 @@ ExtrapolationTimeExceeded --> SoftMotionAxisFault
 
 ### ACW
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "ACW Fault State" as ACW_fault
@@ -760,7 +797,7 @@ BoschPowerSupplyOff --> ACW_fault
 
 ### Encoder System
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Encoder System" as EncoderSystem
@@ -791,7 +828,7 @@ Timeout --> EncoderSystem
 
 ### Main Power Supply
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Main Power Supply" as MainPowerSupply
@@ -813,7 +850,7 @@ MainCabinetOff --> MainPowerSupply
 
 ### OSS
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "OSS" as OSSEvents
@@ -883,7 +920,7 @@ TemperatureTooHighELCBT2 --> OSSEvents
 
 ### Azimuth Drives Thermal
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Azimuth Drives Thermal" as AzimuthDrivesThermal
@@ -908,7 +945,7 @@ MainCabinetOff --> AzimuthDrivesThermal
 
 ### Balancing
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Balancing" as Balancing
@@ -936,7 +973,7 @@ BoschPowerSupplyOff --> Balancing
 
 ### Azimuth Cabinet 0101
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Azimuth Cabinet 0101" as AzimuthCabinet0101
@@ -961,7 +998,7 @@ MainCabinetOff --> AzimuthCabinet0101
 
 ### CCW
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "CCW" as CCW
@@ -992,7 +1029,7 @@ BoschPowerSupplyOff -->  CCW
 
 ### Elevation Drives Thermal
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Elevation Drives Thermal" as ElevationDrivesThermal
@@ -1017,7 +1054,7 @@ MainCabinetOff --> ElevationDrivesThermal
 
 ### Locking Pin
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Locking Pin" as LockingPin
@@ -1045,7 +1082,7 @@ BoschPowerSupplyOff --> LockingPin
 
 ### Main Cabinet (AZ-0001)
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Main Cabinet (AZ-0001)" as MainCabinet
@@ -1085,7 +1122,7 @@ CriticalTemperatureIncrease --> MainCabinet
 
 ### Mirror Covers
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Mirror Covers" as MirrorCovers
@@ -1110,7 +1147,7 @@ BoschPowerSupplyOff --> MirrorCovers
 
 ### Mirror Cover Locks
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Mirror Cover Locks" as MirrorCoverLocks
@@ -1132,7 +1169,7 @@ BoschPowerSupplyOff --> MirrorCoverLocks
 
 ### Deployable Platforms
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Deployable Platforms" as DeployablePlatforms
@@ -1154,7 +1191,7 @@ BoschPowerSupplyOff --> DeployablePlatforms
 
 ### Modbus Auxiliary Boxes (TMA_AZ_DZ_CBT_0001, TMA_AZ_PD_CBT_0001, TMA_AZ_PD_TRM_0001, TMA_EL_PD_CBT_0001, TMA_EL_PD_CBT_0002)
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Modbus Auxiliary Boxes (TMA_AZ_DZ_CBT_0001, TMA_AZ_PD_CBT_0001, TMA_AZ_PD_TRM_0001, TMA_EL_PD_CBT_0001, TMA_EL_PD_CBT_0002)" as ModbusAuxiliaryBoxes
@@ -1173,7 +1210,7 @@ TemperatureTooHigh --> ModbusAuxiliaryBoxes
 
 ### Top End Chiller
 
-```plantuml
+```{uml}
 @startuml
 left to right direction
 rectangle "Top End Chiller" as TopEndChiller

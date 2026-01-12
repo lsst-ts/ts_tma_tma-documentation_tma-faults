@@ -289,6 +289,14 @@ Possible descriptions for alarm code `499`:
 | 705 | Frames loss | Warning | UPD receiving data loop is loosing frames. The frames are not consecutive. | - |
 | 707 | Received Data not OK | Warning | Not all configured data packets are received from EIB or checksum is not valid | - |
 | 709 | Bad format udp packet | Warning | Data received in upd port does not well formatted. The amount of bytes is not corresponding to configured data packet number for EIB | - |
+| 710 | Elevation Encoder Head 1 lost | Warning | The elevation encoder head 1, TMA_AZ_ENC_ELV_0001, is lost. It will not be recovered until a elevation axis power cycle is done | Check the tape and clean if necessary |
+| 711 | Elevation Encoder Head 2 lost | Warning | The elevation encoder head 2, TMA_AZ_ENC_ELV_0002, is lost. It will not be recovered until a elevation axis power cycle is done | Check the tape and clean if necessary |
+| 712 | Elevation Encoder Head 3 lost | Warning | The elevation encoder head 3, TMA_AZ_ENC_ELV_0003, is lost. It will not be recovered until a elevation axis power cycle is done | Check the tape and clean if necessary |
+| 713 | Elevation Encoder Head 4 lost | Warning | The elevation encoder head 4, TMA_AZ_ENC_ELV_0004, is lost. It will not be recovered until a elevation axis power cycle is done | Check the tape and clean if necessary |
+| 714 | Azimuth Encoder Head 1 lost | Warning | The azimuth encoder head 1, TMA_AZ_ENC_AZM_0001, is lost. It will not be recovered until  an azimuth axis power cycle is done | Check the tape and clean if necessary |
+| 715 | Azimuth Encoder Head 2 lost | Warning | The azimuth encoder head 2, TMA_AZ_ENC_AZM_0002, is lost. It will not be recovered until  an azimuth axis power cycle is done | Check the tape and clean if necessary |
+| 716 | Azimuth Encoder Head 3 lost | Warning | The azimuth encoder head 3, TMA_AZ_ENC_AZM_0003, is lost. It will not be recovered until  an azimuth axis power cycle is done | Check the tape and clean if necessary |
+| 717 | Azimuth Encoder Head 4 lost | Warning | The azimuth encoder head 4, TMA_AZ_ENC_AZM_0004, is lost. It will not be recovered until  an azimuth axis power cycle is done | Check the tape and clean if necessary |
 | 755  | Reference mark error | Warning | Reference mark calculation error for heads: failed head names.Possible a reference mark is missing | Check the tape and clean if necessary |
 | 756  | Not all heads have a valid reference | Warning | When calculating the head reference value, the heads failed head names failed. They will not be used for absolute position calculation | Try homing again. Some positions are badly calculated for azimuth, the calculated position is 360 deg away from the actual position, and can't not be used |
 
